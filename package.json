@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  },
+  "scripts": {
+    "tsc": "tsc"
+  },
+  "dependencies": {
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0"
+  }
+}
