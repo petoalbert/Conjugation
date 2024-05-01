@@ -12,6 +12,10 @@ function conjugateRegular(verb: string, tense: Tense, pronoun: Pronoun): string 
 
     if (verbType == VerbType.AR) {
         return conjugateAr(verb, tense, pronoun)
+    } else if (verbType == VerbType.ER) {
+        return conjugateEr(verb, tense, pronoun)
+    } else if (verbType == VerbType.IR) {
+        return conjugateIr(verb, tense, pronoun)
     } else {
         return undefined
     }
@@ -202,91 +206,82 @@ function conjugateEr(verb: string, tense: Tense, pronoun: Pronoun): string | und
     }
 }
 
-/*
+function conjugateIr(verb: string, tense: Tense, pronoun: Pronoun): string | undefined {
+    let base = verb.slice(0, -2)
 
+    switch (tense) {
+        case IndicativoPresente:
+            switch (pronoun) {
+                case Yo: return base + "o"
+                case Tu: return base + "es"
+                case Usted: return base + "e"
+                case Nosotros: return base + "imos"
+                case Vosotros: return base + "ís"
+                case Ustedes: return base + "en"
 
-
-
-
-
-      */
-
-      function conjugateIr(verb: string, tense: Tense, pronoun: Pronoun): string | undefined {
-        let base = verb.slice(0, -2)
-    
-        switch (tense) {
-            case IndicativoPresente:
-                switch (pronoun) {
-                    case Yo: return base + "o"
-                    case Tu: return base + "es"
-                    case Usted: return base + "e"
-                    case Nosotros: return base + "imos"
-                    case Vosotros: return base + "ís"
-                    case Ustedes: return base + "en"
-        
-                }
-            case IndicativoImperfecto:
-                switch (pronoun) {
-                    case Yo: return base + "ía"
-                    case Tu: return base + "ías"
-                    case Usted: return base + "ía"
-                    case Nosotros: return base + "íamos"
-                    case Vosotros: return base + "íais"
-                    case Ustedes: return base + "ían"
-                }
-            case IndicativoIndefinido:
-                switch (pronoun) {
-                    case Yo: return base + "í"
-                    case Tu: return base + "iste"
-                    case Usted: return base + "ió"
-                    case Nosotros: return base + "imos"
-                    case Vosotros: return base + "isteis"
-                    case Ustedes: return base + "ieron"
-                }
-            case IndicativoFuturoImperfecto:
-                switch (pronoun) {
-                    case Yo: return base + "iré"
-                    case Tu: return base + "irás"
-                    case Usted: return base + "irá"
-                    case Nosotros: return base + "iremos"
-                    case Vosotros: return base + "iréis"
-                    case Ustedes: return base + "irán"
-                }
-            case IndicativoCondicional:
-                switch (pronoun) {
-                    case Yo: return base + "iría"
-                    case Tu: return base + "irías"
-                    case Usted: return base + "iría"
-                    case Nosotros: return base + "iríamos"
-                    case Vosotros: return base + "iríais"
-                    case Ustedes: return base + "irían"
-                }
-            case SubjuntivoPresente:
-                switch (pronoun) {
-                    case Yo: return base + "a"
-                    case Tu: return base + "as"
-                    case Usted: return base + "a"
-                    case Nosotros: return base + "amos"
-                    case Vosotros: return base + "áis"
-                    case Ustedes: return base + "an"
-                }
-            case ImperativoAfirmativo:
-                switch (pronoun) {
-                    case Yo: return undefined
-                    case Tu: return base + "e"
-                    case Usted: return base + "a"
-                    case Nosotros: return base + "amos"
-                    case Vosotros: return base + "id"
-                    case Ustedes: return base + "an"
-                }
-            case ImperativoNegativo:
-                switch (pronoun) {
-                    case Yo: return undefined
-                    case Tu: return "no " + base + "as"
-                    case Usted: return "no " + base + "a"
-                    case Nosotros: return "no " + base + "amos"
-                    case Vosotros: return "no " + base + "áis"
-                    case Ustedes: return "no " + base + "an"
-                }
-        }
+            }
+        case IndicativoImperfecto:
+            switch (pronoun) {
+                case Yo: return base + "ía"
+                case Tu: return base + "ías"
+                case Usted: return base + "ía"
+                case Nosotros: return base + "íamos"
+                case Vosotros: return base + "íais"
+                case Ustedes: return base + "ían"
+            }
+        case IndicativoIndefinido:
+            switch (pronoun) {
+                case Yo: return base + "í"
+                case Tu: return base + "iste"
+                case Usted: return base + "ió"
+                case Nosotros: return base + "imos"
+                case Vosotros: return base + "isteis"
+                case Ustedes: return base + "ieron"
+            }
+        case IndicativoFuturoImperfecto:
+            switch (pronoun) {
+                case Yo: return base + "iré"
+                case Tu: return base + "irás"
+                case Usted: return base + "irá"
+                case Nosotros: return base + "iremos"
+                case Vosotros: return base + "iréis"
+                case Ustedes: return base + "irán"
+            }
+        case IndicativoCondicional:
+            switch (pronoun) {
+                case Yo: return base + "iría"
+                case Tu: return base + "irías"
+                case Usted: return base + "iría"
+                case Nosotros: return base + "iríamos"
+                case Vosotros: return base + "iríais"
+                case Ustedes: return base + "irían"
+            }
+        case SubjuntivoPresente:
+            switch (pronoun) {
+                case Yo: return base + "a"
+                case Tu: return base + "as"
+                case Usted: return base + "a"
+                case Nosotros: return base + "amos"
+                case Vosotros: return base + "áis"
+                case Ustedes: return base + "an"
+            }
+        case ImperativoAfirmativo:
+            switch (pronoun) {
+                case Yo: return undefined
+                case Tu: return base + "e"
+                case Usted: return base + "a"
+                case Nosotros: return base + "amos"
+                case Vosotros: return base + "id"
+                case Ustedes: return base + "an"
+            }
+        case ImperativoNegativo:
+            switch (pronoun) {
+                case Yo: return undefined
+                case Tu: return "no " + base + "as"
+                case Usted: return "no " + base + "a"
+                case Nosotros: return "no " + base + "amos"
+                case Vosotros: return "no " + base + "áis"
+                case Ustedes: return "no " + base + "an"
+            }
     }
+}
