@@ -88,15 +88,6 @@ function getParameters(): ConjugationParameters {
   }
 }
 
-function Profile() {
-  return (
-    <img
-      src="https://i.imgur.com/MK3eW3As.jpg"
-      alt="Katherine Johnson"
-    />
-  );
-}
-
 function MyButton({ onClick }: { onClick: () => void }) {
   return (
     <button onClick={onClick}>
