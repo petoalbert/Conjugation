@@ -4,15 +4,28 @@ import { conjugate } from "./Conjugation";
 import { Tense, tenseToString } from "./Tense";
 import { Pronoun, pronounToString } from "./Pronoun";
 import { verbs } from "./IrregularVerbs";
+import { Irregularities } from "./irregularities/Irregularity";
 
-type MyButtonProps = {
-  count: number;
-  onClick: () => void;
+const irregularities = new Map<Irregularities, string[]>();
+
+// Iterate over the original map's entries
+verbs.forEach((value, key) => {
+  // If the value is already in the reversed map, add the key to its array
+  if (irregularities.has(value)) {
+    irregularities.get(value)!.push(key);
+  } else {
+    // Otherwise, create a new array with the key as the only element
+    irregularities.set(value, [key]);
+  }
+});
+
+function getRandom<T>(l: T[]): T {
+  const randomIndex = Math.floor(Math.random() * l.length);
+  return l[randomIndex]
 }
 
-function getVerb() {
-  const randomIndex = Math.floor(Math.random() * verbs.length);
-  return verbs[randomIndex];
+function getVerb():string {
+  return getRandom(getRandom(Array.from(irregularities.values())))
 }
 
 type ConjugationParameters = {

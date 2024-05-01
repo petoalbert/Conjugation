@@ -22,7 +22,7 @@ import { dar } from "./irregularities/Dar";
 import { Irregularities } from "./irregularities/Irregularity";
 import { regularVerb } from "./irregularities/RegularVerb";
 
-let irregularities = new Map<string, Irregularities>([
+export const verbs = new Map<string, Irregularities>([
     ["beber", regularVerb],
     ["vivir", regularVerb],
     ["amar", regularVerb],
@@ -1293,11 +1293,3 @@ let irregularities = new Map<string, Irregularities>([
     ["vulgarizar", cruzar],
     ["dar", dar]
 ]);
-
-// TODO move these to a different file
-export const verbs: string[] = Array.from(irregularities.keys())
-
-// TODO move these to a different file
-export function conjugateIrregular(verb: string, tense: Tense, pronoun: Pronoun): string | undefined {
-    return irregularities.get(verb)?.forms(verb)?.get(tense)?.get(pronoun)
-}

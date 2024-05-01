@@ -1,10 +1,14 @@
 import { Tense } from "./Tense"
 import { VerbType } from "./VerbType"
 import { Pronoun } from "./Pronoun"
-import { conjugateIrregular } from "./IrregularVerbs"
+import { verbs } from "./IrregularVerbs"
 
 export function conjugate(verb: string, tense: Tense, pronoun: Pronoun): string | undefined {
     return conjugateIrregular(verb, tense, pronoun) ?? conjugateRegular(verb, tense, pronoun)
+}
+
+export function conjugateIrregular(verb: string, tense: Tense, pronoun: Pronoun): string | undefined {
+    return verbs.get(verb)?.forms(verb)?.get(tense)?.get(pronoun)
 }
 
 function conjugateRegular(verb: string, tense: Tense, pronoun: Pronoun): string | undefined {
