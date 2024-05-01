@@ -70,6 +70,20 @@ function getParameters(): ConjugationParameters {
   }
 }
 
+function getOnlyIrregularParameters(): ConjugationParameters {
+  const verb = getVerb()
+  let forms = verbs.get(verb)?.forms(verb)
+  let tense = getRandom(Array.from(forms?.keys() ?? []))
+  let pronoun = getRandom(Array.from(forms?.get(tense)?.keys() ?? []))
+  // TODO find better way to handle undefined ^^^
+
+  return {
+    verb: verb,
+    tense: tense,
+    pronoun: pronoun
+  }
+}
+
 function MyButton({ onClick }: { onClick: () => void }) {
   return (
     <button onClick={onClick}>
@@ -80,13 +94,32 @@ function MyButton({ onClick }: { onClick: () => void }) {
 
 export default function Gallery() {
   const [params, setParams] = useState<ConjugationParameters>(getParameters());
+  const [onlyIrregular, setOnlyIrregular] = useState<boolean>(false);
+
+  const handleCheckboxChange = () => {
+    setOnlyIrregular(prevState => !prevState);
+  };
 
   function handleClick() {
-    setParams(getParameters());
+    if (onlyIrregular) {
+      setParams(getOnlyIrregularParameters())
+    } else {
+      setParams(getParameters())
+    }
   }
 
   return (
     <section>
+    <div>
+      <label>
+        <input
+          type="checkbox"
+          checked={onlyIrregular}
+          onChange={handleCheckboxChange}
+        />
+        Only irregular forms
+      </label>
+    </div>
       <MyButton onClick={handleClick} />
       <div>{params.verb}</div>
       <div>{tenseToString(params.tense)}</div>

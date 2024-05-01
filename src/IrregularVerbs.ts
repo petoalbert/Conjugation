@@ -20,12 +20,8 @@ import { contar } from "./irregularities/Contar";
 import { cruzar } from "./irregularities/Cruzar";
 import { dar } from "./irregularities/Dar";
 import { Irregularities } from "./irregularities/Irregularity";
-import { regularVerb } from "./irregularities/RegularVerb";
 
 export const verbs = new Map<string, Irregularities>([
-    ["beber", regularVerb],
-    ["vivir", regularVerb],
-    ["amar", regularVerb],
     ["actuar", actuar],
     ["acentuar", actuar],
     ["anticuar", actuar],
