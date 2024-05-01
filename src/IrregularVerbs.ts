@@ -172,6 +172,10 @@ let irregularities = new Map<string, Irregularities>([
     ["reverdecer", agradecer],
     ["robustecer", agradecer],
     ["verdecer", agradecer],
+    ["almorzar", almorzar],
+    ["disforzar", almorzar],
+    ["esforzar", almorzar],
+    ["reforzar", almorzar],
 ]);
 
 export const verbs: string[] = Array.from(irregularities.keys())
