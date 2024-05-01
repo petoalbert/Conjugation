@@ -5,15 +5,7 @@ import { tenseToString } from "./Tense";
 import { pronounToString } from "./Pronoun";
 import { ConjugationParameters, getOnlyIrregularParameters, getParameters } from "./ConjugationParameters";
 
-function MyButton({ onClick }: { onClick: () => void }) {
-  return (
-    <button onClick={onClick}>
-      New word
-    </button>
-  );
-}
-
-export default function Gallery() {
+export default function ConjugationGame() {
   const [params, setParams] = useState<ConjugationParameters>(getParameters());
   const [onlyIrregular, setOnlyIrregular] = useState<boolean>(false);
   const [inputText, setInputText] = useState('');
@@ -88,8 +80,9 @@ export default function Gallery() {
       {conjugate(params.verb, params.tense, params.pronoun)}"</p>}
       <div><a href={translateLink()} target="_blank">Translation</a></div>
       <div><a href={wordrefLink()} target="_blank">Conjugation</a></div>
-      <MyButton onClick={handleClick} />
-
+      <button onClick={handleClick}>
+        New word
+      </button>
     </section>
   );
 }
