@@ -108,6 +108,14 @@ export default function Gallery() {
     }
   }
 
+  function translateLink(): string {
+    return "https://translate.google.com/?sl=es&tl=en&text=" + params.verb
+  }
+
+  function wordrefLink(): string {
+    return "https://www.wordreference.com/conj/esverbs.aspx?v=" + params.verb
+  }
+
   return (
     <section>
     <div>
@@ -125,6 +133,8 @@ export default function Gallery() {
       <div>{tenseToString(params.tense)}</div>
       <div>{pronounToString(params.pronoun)}</div>
       <div>{conjugate(params.verb, params.tense, params.pronoun)}</div>
+      <div><a href={translateLink()} target="_blank">Translation</a></div>
+      <div><a href={wordrefLink()} target="_blank">Conjugation</a></div>
     </section>
   );
 }
