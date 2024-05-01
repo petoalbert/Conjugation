@@ -45,14 +45,6 @@ export default function ConjugationGame() {
     }
   };
 
-  function translateLink(): string {
-    return "https://translate.google.com/?sl=es&tl=en&text=" + params.verb
-  }
-
-  function wordrefLink(): string {
-    return "https://www.wordreference.com/conj/esverbs.aspx?v=" + params.verb
-  }
-
   return (
     <section>
       <div>
@@ -76,8 +68,6 @@ export default function ConjugationGame() {
       {isValid === true && <p style={{ color: 'green' }}>Correct!</p>}
       {isValid === false && <p style={{ color: 'red' }}>Incorrect! Correct one was:
         {conjugate(params.verb, params.tense, params.pronoun)}"</p>}
-      <div><a href={translateLink()} target="_blank">Translation</a></div>
-      <div><a href={wordrefLink()} target="_blank">Conjugation</a></div>
       <button onClick={handleClick}>
         New word
       </button>
