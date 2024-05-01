@@ -1,6 +1,6 @@
 import { Pronoun } from "../Pronoun"
 import { Tense } from "../Tense"
-import { Irregularity } from "./Irregularity"
+import { Irregularities } from "./Irregularity"
 
 const { Yo, Tu, Usted, Nosotros, Vosotros, Ustedes } = Pronoun
 const {
@@ -14,7 +14,7 @@ const {
     ImperativoNegativo
 } = Tense
 
-export const caber: Irregularity = {
+export const caber: Irregularities = {
     forms: function (string) {
         return new Map([
             [IndicativoIndefinido, new Map([

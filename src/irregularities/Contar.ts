@@ -1,6 +1,6 @@
 import { Pronoun } from "../Pronoun"
 import { Tense } from "../Tense"
-import { Irregularity } from "./Irregularity"
+import { Irregularities } from "./Irregularity"
 
 const { Yo, Tu, Usted, Nosotros, Vosotros, Ustedes } = Pronoun
 const {
@@ -14,7 +14,7 @@ const {
     ImperativoNegativo
 } = Tense
 
-export const contar: Irregularity = {
+export const contar: Irregularities = {
     forms: function (string) {
         let oIndex = string.lastIndexOf("o")
 

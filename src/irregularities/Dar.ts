@@ -1,6 +1,6 @@
 import { Pronoun } from "../Pronoun"
 import { Tense } from "../Tense"
-import { Irregularity } from "./Irregularity"
+import { Irregularities } from "./Irregularity"
 
 const { Yo, Tu, Usted, Nosotros, Vosotros, Ustedes } = Pronoun
 const {
@@ -14,7 +14,7 @@ const {
     ImperativoNegativo
 } = Tense
 
-export const dar: Irregularity = {
+export const dar: Irregularities = {
     forms: function (string) {
         return new Map([
             [IndicativoPresente, new Map([

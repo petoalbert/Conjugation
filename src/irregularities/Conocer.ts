@@ -1,6 +1,6 @@
 import { Pronoun } from "../Pronoun"
 import { Tense } from "../Tense"
-import { Irregularity } from "./Irregularity"
+import { Irregularities } from "./Irregularity"
 
 const { Yo, Tu, Usted, Nosotros, Vosotros, Ustedes } = Pronoun
 const {
@@ -14,7 +14,7 @@ const {
     ImperativoNegativo
 } = Tense
 
-export const conocer: Irregularity = {
+export const conocer: Irregularities = {
     forms: function (string) {
         let base = string.slice(0, -3) // cer
 

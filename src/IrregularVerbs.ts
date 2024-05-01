@@ -19,39 +19,45 @@ import { construir } from "./irregularities/Construir";
 import { contar } from "./irregularities/Contar";
 import { cruzar } from "./irregularities/Cruzar";
 import { dar } from "./irregularities/Dar";
-import { Irregularity } from "./irregularities/Irregularity";
+import { Irregularities } from "./irregularities/Irregularity";
+import { regularVerb } from "./irregularities/RegularVerb";
 
-let irregularities = new Map<string, Irregularity>([
-    ["actuar"            ,  actuar],
-    ["acentuar"          ,  actuar],
-    ["anticuar"          ,  actuar],
-    ["atenuar"           ,  actuar],
-    ["conceptuar"        ,  actuar],
-    ["consensuar"        ,  actuar],
-    ["continuar"         ,  actuar],
-    ["desconceptuar"     ,  actuar],
-    ["deshabituar"       ,  actuar],
-    ["desvirtuar"        ,  actuar],
-    ["devaluar"          ,  actuar],
-    ["efectuar"          ,  actuar],
-    ["evaluar"           ,  actuar],
-    ["exceptuar"         ,  actuar],
-    ["extenuar"          ,  actuar],
-    ["fluctuar"          ,  actuar],
-    ["graduar"           ,  actuar],
-    ["habituar"          ,  actuar],
-    ["insinuar"          ,  actuar],
-    ["interactuar"       ,  actuar],
-    ["menstruar"         ,  actuar],
-    ["perpetuar"         ,  actuar],
-    ["puntuar"           ,  actuar],
-    ["redituar"          ,  actuar],
-    ["reevaluar"         ,  actuar],
-    ["revaluar"          ,  actuar],
-    ["situar"            ,  actuar],
-    ["tatuar"            ,  actuar],
-    ["valuar"            ,  actuar],
+let irregularities = new Map<string, Irregularities>([
+    ["beber", regularVerb],
+    ["vivir", regularVerb],
+    ["amar", regularVerb],
+    ["actuar", actuar],
+    ["acentuar", actuar],
+    ["anticuar", actuar],
+    ["atenuar", actuar],
+    ["conceptuar", actuar],
+    ["consensuar", actuar],
+    ["continuar", actuar],
+    ["desconceptuar", actuar],
+    ["deshabituar", actuar],
+    ["desvirtuar", actuar],
+    ["devaluar", actuar],
+    ["efectuar", actuar],
+    ["evaluar", actuar],
+    ["exceptuar", actuar],
+    ["extenuar", actuar],
+    ["fluctuar", actuar],
+    ["graduar", actuar],
+    ["habituar", actuar],
+    ["insinuar", actuar],
+    ["interactuar", actuar],
+    ["menstruar", actuar],
+    ["perpetuar", actuar],
+    ["puntuar", actuar],
+    ["redituar", actuar],
+    ["reevaluar", actuar],
+    ["revaluar", actuar],
+    ["situar", actuar],
+    ["tatuar", actuar],
+    ["valuar", actuar],
 ]);
+
+export const verbs: string[] = Array.from(irregularities.keys())
 
 export function conjugateIrregular(verb: string, tense: Tense, pronoun: Pronoun): string | undefined {
     return irregularities.get(verb)?.forms(verb)?.get(tense)?.get(pronoun)

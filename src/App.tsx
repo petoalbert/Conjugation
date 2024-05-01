@@ -3,43 +3,12 @@ import { useState } from "react";
 import { conjugate } from "./Conjugation";
 import { Tense, tenseToString } from "./Tense";
 import { Pronoun, pronounToString } from "./Pronoun";
+import { verbs } from "./IrregularVerbs";
 
 type MyButtonProps = {
   count: number;
   onClick: () => void;
 }
-
-const verbs = [
-  "actuar",
-  "acentuar",
-  "anticuar",
-  "atenuar",
-  "conceptuar",
-  "consensuar",
-  "continuar",
-  "desconceptuar",
-  "deshabituar",
-  "desvirtuar",
-  "devaluar",
-  "efectuar",
-  "evaluar",
-  "exceptuar",
-  "extenuar",
-  "fluctuar",
-  "graduar",
-  "habituar",
-  "insinuar",
-  "interactuar",
-  "menstruar",
-  "perpetuar",
-  "puntuar",
-  "redituar",
-  "reevaluar",
-  "revaluar",
-  "situar",
-  "tatuar",
-  "valuar"
-]
 
 function getVerb() {
   const randomIndex = Math.floor(Math.random() * verbs.length);

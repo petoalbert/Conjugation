@@ -1,7 +1,7 @@
 import { Tense } from "./Tense"
 import { VerbType } from "./VerbType"
 import { Pronoun } from "./Pronoun"
-import { conjugateIrregular } from "./Irregularities"
+import { conjugateIrregular } from "./IrregularVerbs"
 
 export function conjugate(verb: string, tense: Tense, pronoun: Pronoun): string | undefined {
     return conjugateIrregular(verb, tense, pronoun) ?? conjugateRegular(verb, tense, pronoun)
