@@ -36,10 +36,10 @@ export const atacar: Irregularities = {
                 [Ustedes, base + "quen"],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, "no" + base + "ques"],
-                [Usted, "no" + base + "que"],
-                [Nosotros, "no" + base + "quemos"],
-                [Vosotros, "no" + base + "quéis"],
+                [Tu, "no " + base + "ques"],
+                [Usted, "no " + base + "que"],
+                [Nosotros, "no " + base + "quemos"],
+                [Vosotros, "no " + base + "quéis"],
                 [Ustedes, "no " + base + "quen"]
             ])]
         ])

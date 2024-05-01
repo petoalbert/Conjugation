@@ -36,10 +36,10 @@ export const coger: Irregularities = {
                 [Ustedes, base + "jan"],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, "no" + base + "jas"],
-                [Usted, "no" + base + "ja"],
-                [Nosotros, "no" + base + "jamos"],
-                [Vosotros, "no" + base + "jáis"],
+                [Tu, "no " + base + "jas"],
+                [Usted, "no " + base + "ja"],
+                [Nosotros, "no " + base + "jamos"],
+                [Vosotros, "no " + base + "jáis"],
                 [Ustedes, "no " + base + "jan"]
             ])]
         ])

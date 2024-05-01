@@ -43,10 +43,10 @@ export const caer: Irregularities = {
                 [Ustedes, base + "caigan"],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, "no" + base + "caigas"],
-                [Usted, "no" + base + "caiga"],
-                [Nosotros, "no" + base + "caigamos"],
-                [Vosotros, "no" + base + "caigáis"],
+                [Tu, "no " + base + "caigas"],
+                [Usted, "no " + base + "caiga"],
+                [Nosotros, "no " + base + "caigamos"],
+                [Vosotros, "no " + base + "caigáis"],
                 [Ustedes, "no " + base + "caigan"]
             ])]
         ])

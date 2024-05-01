@@ -37,8 +37,8 @@ export const actuar: Irregularities = {
                 [Ustedes, base + "úen"]  
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, "no" + base + "úes"],
-                [Usted, "no" + base + "úe"],
+                [Tu, "no " + base + "úes"],
+                [Usted, "no " + base + "úe"],
                 [Ustedes, "no " + base + "úen"]    
             ])]
         ])

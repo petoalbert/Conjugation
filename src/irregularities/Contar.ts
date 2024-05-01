@@ -41,8 +41,8 @@ export const contar: Irregularities = {
                 [Ustedes, base + "ue" + rest + "en"],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, "no" + base + "ue" + rest + "es"],
-                [Usted, "no" + base + "ue" + rest + "e"],
+                [Tu, "no " + base + "ue" + rest + "es"],
+                [Usted, "no " + base + "ue" + rest + "e"],
                 [Ustedes, "no " + base + "ue" + rest + "en"]
             ])]
         ])
