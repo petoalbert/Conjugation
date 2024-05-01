@@ -4,6 +4,7 @@ import { conjugate } from "./Conjugation";
 import { tenseToString } from "./Tense";
 import { pronounToString } from "./Pronoun";
 import { ConjugationParameters, getOnlyIrregularParameters, getParameters } from "./ConjugationParameters";
+import Task from "./Task";
 
 export default function ConjugationGame() {
   const [params, setParams] = useState<ConjugationParameters>(getParameters());
@@ -54,20 +55,17 @@ export default function ConjugationGame() {
 
   return (
     <section>
-    <div>
-      <label>
-        <input
-          type="checkbox"
-          checked={onlyIrregular}
-          onChange={handleCheckboxChange}
-        />
-        Only irregular forms
-      </label>
-    </div>
-      <div>{params.verb}</div>
-      <div>{tenseToString(params.tense)}</div>
-      <div>{pronounToString(params.pronoun)}</div>
-      {/* <div>{conjugate(params.verb, params.tense, params.pronoun)}</div> */}
+      <div>
+        <label>
+          <input
+            type="checkbox"
+            checked={onlyIrregular}
+            onChange={handleCheckboxChange}
+          />
+          Only irregular forms
+        </label>
+      </div>
+      <Task params={params} />
       <input
         type="text"
         value={inputText}
@@ -76,8 +74,8 @@ export default function ConjugationGame() {
         placeholder="Enter text..."
       />
       {isValid === true && <p style={{ color: 'green' }}>Correct!</p>}
-      {isValid === false && <p style={{ color: 'red' }}>Incorrect! Correct one was: 
-      {conjugate(params.verb, params.tense, params.pronoun)}"</p>}
+      {isValid === false && <p style={{ color: 'red' }}>Incorrect! Correct one was:
+        {conjugate(params.verb, params.tense, params.pronoun)}"</p>}
       <div><a href={translateLink()} target="_blank">Translation</a></div>
       <div><a href={wordrefLink()} target="_blank">Conjugation</a></div>
       <button onClick={handleClick}>
