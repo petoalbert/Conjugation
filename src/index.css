@@ -11,7 +11,7 @@
 
   .animated-element {
     height: 170px;
-    animation: slideInFromBelow 1s ease-in-out;
+    animation: slideInFromBelow 500ms ease-in-out;
   }
 
 @keyframes fadein {
@@ -37,10 +37,10 @@
 
 .success {
   color: green;
-  animation: fadein 1s;
+  animation: fadein 500ms;
 }
 
 .failure {
   color: red;
-  animation: fadein 1s;
+  animation: fadein 500ms;
 }
