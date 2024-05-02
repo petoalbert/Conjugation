@@ -49,25 +49,15 @@ export default function ConjugationGame() {
   };
 
   return (
-    <section>
+    <div className="container text-center fixed-bottom mb-xl-5 col-sm-4 offset-sm-3" id="main">
+      <div id="second">
+      {tasks.map(t =>
+        <div key={t.id} className="card border border-primary mb-2 animated-element">
+          <Task params={t.params} />
+          {t.userInput && <TaskResult params={t.params} input={t.userInput} />}
+        </div>
+      )}
       <div>
-        <label>
-          <input
-            type="checkbox"
-            checked={onlyIrregular}
-            onChange={handleCheckboxChange}
-          />
-          Only irregular forms
-        </label>
-      </div>
-      <ul>
-        {tasks.map(t =>
-          <li id={t.id}>
-            <Task params={t.params} />
-            {t.userInput && <TaskResult params={t.params} input={t.userInput} />}
-          </li>
-        )}
-      </ul>
       <input
         type="text"
         value={inputText}
@@ -75,6 +65,19 @@ export default function ConjugationGame() {
         onKeyDown={handleKeyDown}
         placeholder="Enter text..."
       />
-    </section>
+      </div>
+      <div>
+      <label>
+        <input
+          type="checkbox"
+          checked={onlyIrregular}
+          onChange={handleCheckboxChange}
+        />
+        Only irregular forms
+      </label>
+      </div>
+
+    </div>
+    </div>
   );
 }

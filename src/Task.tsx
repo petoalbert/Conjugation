@@ -8,12 +8,13 @@ export default function Task({ params }: { params: ConjugationParameters }) {
     const wordrefLink = "https://www.wordreference.com/conj/esverbs.aspx?v=" + params.verb
 
     return (
-        <div>
-            <div>{params.verb}</div>
-            <div>{tenseToString(params.tense)}</div>
-            <div>{pronounToString(params.pronoun)}</div>
-            <div><a href={translateLink} target="_blank">Translation</a></div>
-            <div><a href={wordrefLink} target="_blank">Conjugation</a></div>
+        <div className="card-body">
+            <h5 className="card-title">{params.verb}</h5>
+            <h6 className="card-subtitle">{pronounToString(params.pronoun)} - {tenseToString(params.tense)}</h6>
+            <div>
+                <a className="card-link" href={translateLink} target="_blank">Translation</a>
+                <a className="card-link" href={wordrefLink} target="_blank">Conjugation</a>
+            </div>
         </div>
     )
 }
