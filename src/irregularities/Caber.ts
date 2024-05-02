@@ -4,7 +4,7 @@ import { Irregularities } from "./Irregularity"
 
 const { Yo, Tu, Usted, Nosotros, Vosotros, Ustedes } = Pronoun
 const {
-    IndicativoImperfecto,
+    IndicativoFuturoImperfecto,
     IndicativoIndefinido,
     IndicativoCondicional,
     SubjuntivoPresente,
@@ -24,7 +24,7 @@ export const caber: Irregularities = {
                 [Vosotros, "cupisteis"],
                 [Ustedes, "cupieron"],
             ])],
-            [IndicativoImperfecto, new Map([
+            [IndicativoFuturoImperfecto, new Map([
                 [Yo, "cabré"],
                 [Tu, "cabrás"],
                 [Usted, "cabrá"],
