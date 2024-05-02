@@ -5,39 +5,43 @@ import { tenseToString } from "./Tense";
 import { pronounToString } from "./Pronoun";
 import { ConjugationParameters, getOnlyIrregularParameters, getParameters } from "./ConjugationParameters";
 import Task from "./Task";
+import { v4 as uuidv4 } from 'uuid';
+import { TaskResult } from "./TaskResult";
+
+type TaskData = {
+  id: string;
+  params: ConjugationParameters;
+  userInput?: string;
+}
 
 export default function ConjugationGame() {
-  const [params, setParams] = useState<ConjugationParameters>(getParameters());
   const [onlyIrregular, setOnlyIrregular] = useState<boolean>(false);
   const [inputText, setInputText] = useState('');
-  const [isValid, setIsValid] = useState<boolean | null>(null);
+  const [tasks, setTasks] = useState<TaskData[]>([{ id: uuidv4(), params: getParameters() }])
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(event.target.value);
   };
 
   const handleCheck = () => {
-    if (inputText === conjugate(params.verb, params.tense, params.pronoun)) {
-      setIsValid(true);
-    } else {
-      setIsValid(false);
-    }
+    setTasks(prevTasks => {
+      const last = prevTasks[prevTasks.length - 1]
+      const newTask = {
+        id: uuidv4(),
+        params: getParameters()
+      }
+
+      return [
+        ...prevTasks.slice(0, -1),
+        { id: last.id, params: last.params, userInput: inputText },
+        newTask
+      ]
+    });
   };
 
   const handleCheckboxChange = () => {
     setOnlyIrregular(prevState => !prevState);
   };
-
-  function handleClick() {
-    setIsValid(null)
-    setInputText('')
-
-    if (onlyIrregular) {
-      setParams(getOnlyIrregularParameters())
-    } else {
-      setParams(getParameters())
-    }
-  }
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
@@ -57,7 +61,14 @@ export default function ConjugationGame() {
           Only irregular forms
         </label>
       </div>
-      <Task params={params} />
+      <ul>
+        {tasks.map(t =>
+          <li id={t.id}>
+            <Task params={t.params} />
+            {t.userInput && <TaskResult params={t.params} input={t.userInput} />}
+          </li>
+        )}
+      </ul>
       <input
         type="text"
         value={inputText}
@@ -65,12 +76,6 @@ export default function ConjugationGame() {
         onKeyDown={handleKeyDown}
         placeholder="Enter text..."
       />
-      {isValid === true && <p style={{ color: 'green' }}>Correct!</p>}
-      {isValid === false && <p style={{ color: 'red' }}>Incorrect! Correct one was:
-        {conjugate(params.verb, params.tense, params.pronoun)}"</p>}
-      <button onClick={handleClick}>
-        New word
-      </button>
     </section>
   );
 }
