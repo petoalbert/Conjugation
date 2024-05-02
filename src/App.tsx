@@ -8,26 +8,27 @@ import { TaskResult } from "./TaskResult";
 type TaskData = {
   id: string;
   params: ConjugationParameters;
-  userInput?: string;
+  userInput: string | null;
 }
 
 export default function ConjugationGame() {
   const [onlyIrregular, setOnlyIrregular] = useState<boolean>(false);
   const [inputText, setInputText] = useState('');
-  const [tasks, setTasks] = useState<TaskData[]>([{ id: uuidv4(), params: getParameters() }])
+  const [tasks, setTasks] = useState<TaskData[]>([{ id: uuidv4(), params: getParameters(), userInput: null }])
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(event.target.value);
   };
 
   const handleCheck = () => {
-    let input = inputText
+    let input = JSON.parse(JSON.stringify(inputText));
     setInputText("")
     setTasks(prevTasks => {
       const last = prevTasks[prevTasks.length - 1]
       const newTask = {
         id: uuidv4(),
-        params: getParameters()
+        params: getParameters(),
+        userInput: null
       }
 
       return [
@@ -54,7 +55,7 @@ export default function ConjugationGame() {
       {tasks.map(t =>
         <div key={t.id} className="card border border-primary mb-2 animated-element">
           <Task params={t.params} />
-          {t.userInput && <TaskResult params={t.params} input={t.userInput} />}
+          {t.userInput != null && <TaskResult params={t.params} input={t.userInput} />}
         </div>
       )}
       <div>
