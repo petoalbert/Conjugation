@@ -8,7 +8,7 @@ export function TaskResult({ params, input }: { params: ConjugationParameters, i
     if (input === correctForm) {
         return (<p className="success">{correctForm} &#128526;</p>)
     } else if (input.trim() === "") {
-        return (<p className="failure"><s>No guess &#128529;</s><br />{correctForm}</p>)
+        return (<p className="failure"><s>No guess</s> &#128529;<br />{correctForm}</p>)
     } else {
         return (<p className="failure"><s>{input}</s> &#128546;<br />{correctForm}</p>)
     }
