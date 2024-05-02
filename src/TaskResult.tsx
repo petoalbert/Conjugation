@@ -6,8 +6,8 @@ export function TaskResult({ params, input }: { params: ConjugationParameters, i
     const correctForm = conjugate(params.verb, params.tense, params.pronoun)
 
     if (input === correctForm) {
-        return (<p style={{ color: 'green' }}>Correct!</p>)
+        return (<p className="success">{correctForm}</p>)
     } else {
-        return (<p style={{ color: 'red' }}>Incorrect! Correct one was: {correctForm}"</p>)
+        return (<p className="failure"><s>{input}</s><br />{correctForm}</p>)
     }
 }
