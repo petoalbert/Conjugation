@@ -4,6 +4,8 @@ import { ConjugationParameters, getParameters } from "./ConjugationParameters";
 import Task from "./Task";
 import { v4 as uuidv4 } from 'uuid';
 import { TaskResult } from "./TaskResult";
+import { pronounToString } from "./Pronoun";
+import { tenseToString } from "./Tense";
 
 type TaskData = {
   id: string;
@@ -12,7 +14,6 @@ type TaskData = {
 }
 
 export default function ConjugationGame() {
-  const [onlyIrregular, setOnlyIrregular] = useState<boolean>(false);
   const [inputText, setInputText] = useState('');
   const [tasks, setTasks] = useState<TaskData[]>([{ id: uuidv4(), params: getParameters(), userInput: null }])
 
@@ -39,10 +40,6 @@ export default function ConjugationGame() {
     });
   };
 
-  const handleCheckboxChange = () => {
-    setOnlyIrregular(prevState => !prevState);
-  };
-
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
       handleCheck();
@@ -52,33 +49,26 @@ export default function ConjugationGame() {
   return (
     <div className="container text-center fixed-bottom mb-xl-5 col-sm-4 offset-sm-3" id="main">
       <div id="second">
-      {tasks.map(t =>
-        <div key={t.id} className="card border border-primary mb-2 animated-element">
-          <Task params={t.params} />
-          {t.userInput != null && <TaskResult params={t.params} input={t.userInput} />}
+        {tasks.map(t =>
+          <div key={t.id} className="card border border-primary mb-2 animated-element">
+            <Task params={t.params} />
+            {t.userInput != null && <TaskResult params={t.params} input={t.userInput} />}
+          </div>
+        )}
+        <div className="input-group">
+          <span className="input-group-text" id="basic-addon1">{pronounToString(tasks[tasks.length-1].params.pronoun)}</span>
+          <input
+            type="text"
+            className="form-control"
+            value={inputText}
+            onChange={handleInputChange}
+            onKeyDown={handleKeyDown}
+            placeholder={tenseToString(tasks[tasks.length-1].params.tense)}
+            aria-label={tenseToString(tasks[tasks.length-1].params.tense)}
+            aria-describedby="basic-addon1"
+          />
         </div>
-      )}
-      <div>
-      <input
-        type="text"
-        value={inputText}
-        onChange={handleInputChange}
-        onKeyDown={handleKeyDown}
-        placeholder="Enter text..."
-      />
       </div>
-      <div>
-      <label>
-        <input
-          type="checkbox"
-          checked={onlyIrregular}
-          onChange={handleCheckboxChange}
-        />
-        Only irregular forms
-      </label>
-      </div>
-
-    </div>
     </div>
   );
 }
