@@ -2,13 +2,9 @@ import { Pronoun } from "../Pronoun"
 import { Tense } from "../Tense"
 import { Irregularities } from "./Irregularity"
 
-const { Yo, Tu, Usted, Nosotros, Vosotros, Ustedes } = Pronoun
+const { Yo, Tu, Usted, Ustedes } = Pronoun
 const {
     IndicativoPresente,
-    IndicativoImperfecto,
-    IndicativoIndefinido,
-    IndicativoFuturoImperfecto,
-    IndicativoCondicional,
     SubjuntivoPresente,
     ImperativoAfirmativo,
     ImperativoNegativo
@@ -34,12 +30,12 @@ export const actuar: Irregularities = {
             [ImperativoAfirmativo, new Map([
                 [Tu, base + "úa"],
                 [Usted, base + "úe"],
-                [Ustedes, base + "úen"]  
+                [Ustedes, base + "úen"]
             ])],
             [ImperativoNegativo, new Map([
                 [Tu, "no " + base + "úes"],
                 [Usted, "no " + base + "úe"],
-                [Ustedes, "no " + base + "úen"]    
+                [Ustedes, "no " + base + "úen"]
             ])]
         ])
     }

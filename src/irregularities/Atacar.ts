@@ -4,11 +4,7 @@ import { Irregularities } from "./Irregularity"
 
 const { Yo, Tu, Usted, Nosotros, Vosotros, Ustedes } = Pronoun
 const {
-    IndicativoPresente,
-    IndicativoImperfecto,
     IndicativoIndefinido,
-    IndicativoFuturoImperfecto,
-    IndicativoCondicional,
     SubjuntivoPresente,
     ImperativoAfirmativo,
     ImperativoNegativo

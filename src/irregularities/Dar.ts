@@ -5,17 +5,12 @@ import { Irregularities } from "./Irregularity"
 const { Yo, Tu, Usted, Nosotros, Vosotros, Ustedes } = Pronoun
 const {
     IndicativoPresente,
-    IndicativoImperfecto,
     IndicativoIndefinido,
-    IndicativoFuturoImperfecto,
-    IndicativoCondicional,
     SubjuntivoPresente,
-    ImperativoAfirmativo,
-    ImperativoNegativo
-} = Tense
+    ImperativoAfirmativo } = Tense
 
 export const dar: Irregularities = {
-    forms: function (string) {
+    forms: function () {
         return new Map([
             [IndicativoPresente, new Map([
                 [Yo, "doy"],

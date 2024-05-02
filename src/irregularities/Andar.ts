@@ -3,16 +3,7 @@ import { Tense } from "../Tense"
 import { Irregularities } from "./Irregularity"
 
 const { Yo, Tu, Usted, Nosotros, Vosotros, Ustedes } = Pronoun
-const {
-    IndicativoPresente,
-    IndicativoImperfecto,
-    IndicativoIndefinido,
-    IndicativoFuturoImperfecto,
-    IndicativoCondicional,
-    SubjuntivoPresente,
-    ImperativoAfirmativo,
-    ImperativoNegativo
-} = Tense
+const { IndicativoIndefinido } = Tense
 
 export const andar: Irregularities = {
     forms: function (string) {

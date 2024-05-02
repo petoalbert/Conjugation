@@ -1,4 +1,4 @@
-export enum Tense { 
+export enum Tense {
     IndicativoPresente,
     IndicativoImperfecto,
     IndicativoIndefinido,

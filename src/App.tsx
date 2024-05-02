@@ -1,9 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { conjugate } from "./Conjugation";
-import { tenseToString } from "./Tense";
-import { pronounToString } from "./Pronoun";
-import { ConjugationParameters, getOnlyIrregularParameters, getParameters } from "./ConjugationParameters";
+import { ConjugationParameters, getParameters } from "./ConjugationParameters";
 import Task from "./Task";
 import { v4 as uuidv4 } from 'uuid';
 import { TaskResult } from "./TaskResult";

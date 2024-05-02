@@ -4,10 +4,8 @@ import { Irregularities } from "./Irregularity"
 
 const { Yo, Tu, Usted, Nosotros, Vosotros, Ustedes } = Pronoun
 const {
-    IndicativoPresente,
     IndicativoImperfecto,
     IndicativoIndefinido,
-    IndicativoFuturoImperfecto,
     IndicativoCondicional,
     SubjuntivoPresente,
     ImperativoAfirmativo,
@@ -15,7 +13,7 @@ const {
 } = Tense
 
 export const caber: Irregularities = {
-    forms: function (string) {
+    forms: function () {
         return new Map([
             [IndicativoIndefinido, new Map([
                 [Yo, "quepo"],
