@@ -21,6 +21,8 @@ export default function ConjugationGame() {
   };
 
   const handleCheck = () => {
+    let input = inputText
+    setInputText("")
     setTasks(prevTasks => {
       const last = prevTasks[prevTasks.length - 1]
       const newTask = {
@@ -30,7 +32,7 @@ export default function ConjugationGame() {
 
       return [
         ...prevTasks.slice(0, -1),
-        { id: last.id, params: last.params, userInput: inputText },
+        { id: last.id, params: last.params, userInput: input },
         newTask
       ]
     });
