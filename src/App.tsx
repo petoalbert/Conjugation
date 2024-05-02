@@ -47,27 +47,31 @@ export default function ConjugationGame() {
   };
 
   return (
-    <div className="container text-center fixed-bottom mb-xl-5 col-sm-4 offset-sm-3" id="main">
-      <div id="second">
-        {tasks.map(t =>
-          <div key={t.id} className="card border border-primary mb-2 animated-element">
-            <Task params={t.params} />
-            {t.userInput != null && <TaskResult params={t.params} input={t.userInput} />}
+    <div className="container" id="main">
+      <div className="row text-center fixed-bottom">
+        <div className="col-sm"></div>
+        <div className="mb-xl-5 col-sm-3" id="second">
+          {tasks.map(t =>
+            <div key={t.id} className="card rounded border border-primary mb-2 animated-element shadow">
+              <Task params={t.params} />
+              {t.userInput != null && <TaskResult params={t.params} input={t.userInput} />}
+            </div>
+          )}
+          <div className="input-group">
+            <span className="input-group-text" id="basic-addon1">{pronounToString(tasks[tasks.length - 1].params.pronoun)}</span>
+            <input
+              type="text"
+              className="form-control"
+              value={inputText}
+              onChange={handleInputChange}
+              onKeyDown={handleKeyDown}
+              placeholder={tenseToString(tasks[tasks.length - 1].params.tense)}
+              aria-label={tenseToString(tasks[tasks.length - 1].params.tense)}
+              aria-describedby="basic-addon1"
+            />
           </div>
-        )}
-        <div className="input-group">
-          <span className="input-group-text" id="basic-addon1">{pronounToString(tasks[tasks.length-1].params.pronoun)}</span>
-          <input
-            type="text"
-            className="form-control"
-            value={inputText}
-            onChange={handleInputChange}
-            onKeyDown={handleKeyDown}
-            placeholder={tenseToString(tasks[tasks.length-1].params.tense)}
-            aria-label={tenseToString(tasks[tasks.length-1].params.tense)}
-            aria-describedby="basic-addon1"
-          />
         </div>
+        <div className="col-sm"></div>
       </div>
     </div>
   );
