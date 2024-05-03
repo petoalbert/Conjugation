@@ -32,11 +32,11 @@ export const conocer: Irregularities = {
                 [Ustedes, base + "zcan"],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, "no " + base + "zcas"],
-                [Usted, "no " + base + "zca"],
-                [Nosotros, "no " + base + "zcamos"],
-                [Vosotros, "no " + base + "zcáis"],
-                [Ustedes, "no " + base + "zcan"]
+                [Tu, base + "zcas"],
+                [Usted, base + "zca"],
+                [Nosotros, base + "zcamos"],
+                [Vosotros, base + "zcáis"],
+                [Ustedes, base + "zcan"]
             ])]
         ])
     }

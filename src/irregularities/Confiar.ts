@@ -33,9 +33,9 @@ export const confiar: Irregularities = {
                 [Ustedes, base + "íen"],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, "no " + base + "íes"],
-                [Usted, "no " + base + "íe"],
-                [Ustedes, "no " + base + "íen"]
+                [Tu, base + "íes"],
+                [Usted, base + "íe"],
+                [Ustedes, base + "íen"]
             ])]
         ])
     }

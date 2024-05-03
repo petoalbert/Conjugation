@@ -18,7 +18,7 @@ export const avergonzar: Irregularities = {
         return new Map([
             [IndicativoPresente, new Map([
                 [Yo, base + "güenzo"],
-                [Tu, base + "güenas"],
+                [Tu, base + "güenzas"],
                 [Usted, base + "güenza"],
                 [Ustedes, base + "güenzan"],
             ])],
@@ -40,11 +40,11 @@ export const avergonzar: Irregularities = {
                 [Ustedes, base + "güencen"],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, "no " + base + "güences"],
-                [Usted, "no " + base + "güence"],
-                [Nosotros, "no " + base + "güencemos"],
-                [Vosotros, "no " + base + "güencéis"],
-                [Ustedes, "no " + base + "güencen"]
+                [Tu, base + "güences"],
+                [Usted, base + "güence"],
+                [Nosotros, base + "güencemos"],
+                [Vosotros, base + "güencéis"],
+                [Ustedes, base + "güencen"]
             ])]
         ])
     }

@@ -40,11 +40,11 @@ export const almorzar: Irregularities = {
                 [Ustedes, base + "uercen"],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, "no " + base + "uerces"],
-                [Usted, "no " + base + "uerce"],
-                [Nosotros, "no " + base + "uercemos"],
-                [Vosotros, "no " + base + "uercéis"],
-                [Ustedes, "no " + base + "uercen"]
+                [Tu, base + "uerces"],
+                [Usted, base + "uerce"],
+                [Nosotros, base + "uercemos"],
+                [Vosotros, base + "uercéis"],
+                [Ustedes, base + "uercen"]
             ])]
         ])
     }

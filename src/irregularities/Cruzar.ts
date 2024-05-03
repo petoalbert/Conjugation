@@ -32,11 +32,11 @@ export const cruzar: Irregularities = {
                 [Ustedes, base + "cen"],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, "no " + base + "ces"],
-                [Usted, "no " + base + "ce"],
-                [Nosotros, "no " + base + "cemos"],
-                [Vosotros, "no " + base + "céis"],
-                [Ustedes, "no " + base + "cen"]
+                [Tu, base + "ces"],
+                [Usted, base + "ce"],
+                [Nosotros, base + "cemos"],
+                [Vosotros, base + "céis"],
+                [Ustedes, base + "cen"]
             ])]
         ])
     }

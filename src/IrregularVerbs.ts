@@ -19,6 +19,7 @@ import { construir } from "./irregularities/Construir";
 import { contar } from "./irregularities/Contar";
 import { cruzar } from "./irregularities/Cruzar";
 import { dar } from "./irregularities/Dar";
+import { decir } from "./irregularities/Decir";
 import { Irregularities } from "./irregularities/Irregularity";
 
 export const verbs = new Map<string, Irregularities>([
@@ -1287,5 +1288,8 @@ export const verbs = new Map<string, Irregularities>([
     ["volatilizar", cruzar],
     ["vulcanizar", cruzar],
     ["vulgarizar", cruzar],
-    ["dar", dar]
+    ["dar", dar],
+    ["decir", decir],
+    ["bendecir", decir],
+    ["maldecir", decir],
 ]);

@@ -56,11 +56,11 @@ export const caber: Irregularities = {
                 [Ustedes, "quepan"],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, "no " + "quepas"],
-                [Usted, "no " + "quepa"],
-                [Nosotros, "no " + "quepamos"],
-                [Vosotros, "no " + "quepáis"],
-                [Ustedes, "no " + "quepan"]
+                [Tu, "quepas"],
+                [Usted, "quepa"],
+                [Nosotros, "quepamos"],
+                [Vosotros, "quepáis"],
+                [Ustedes, "quepan"]
             ])]
         ])
     }

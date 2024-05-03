@@ -34,9 +34,9 @@ export const adquirir: Irregularities = {
                 [Ustedes, base + "quieran"],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, "no " + base + "quieras"],
-                [Usted, "no " + base + "quiera"],
-                [Ustedes, "no " + base + "quieran"]
+                [Tu, base + "quieras"],
+                [Usted, base + "quiera"],
+                [Ustedes, base + "quieran"]
             ])]
         ])
     }

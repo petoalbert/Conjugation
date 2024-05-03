@@ -41,11 +41,11 @@ export const arguir: Irregularities = {
                 [Ustedes, base + "uyan"],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, "no " + base + "uyas"],
-                [Usted, "no " + base + "uya"],
-                [Nosotros, "no " + base + "uyamos"],
-                [Vosotros, "no " + base + "uyáis"],
-                [Ustedes, "no " + base + "uyan"]
+                [Tu, base + "uyas"],
+                [Usted, base + "uya"],
+                [Nosotros, base + "uyamos"],
+                [Vosotros, base + "uyáis"],
+                [Ustedes, base + "uyan"]
             ])]
         ])
     }
