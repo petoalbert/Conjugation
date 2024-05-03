@@ -50,7 +50,7 @@ export default function ConjugationGame() {
     <div className="container" id="main">
       <div className="row text-center fixed-bottom">
         <div className="col-sm"></div>
-        <div className="mb-xl-5 col-sm-3" id="second">
+        <div className="mb-xl-5 col-lg-2" id="second">
           {tasks.map(t =>
             <div key={t.id} className="card rounded border border-primary mb-2 animated-element shadow">
               <Task params={t.params} />
@@ -61,6 +61,7 @@ export default function ConjugationGame() {
             <span className="input-group-text" id="basic-addon1">{pronounToString(tasks[tasks.length - 1].params.pronoun)}</span>
             <input
               type="text"
+              id="userinput"
               className="form-control"
               value={inputText}
               onChange={handleInputChange}

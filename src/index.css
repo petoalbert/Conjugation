@@ -44,3 +44,7 @@
   color: red;
   animation: fadein 500ms;
 }
+
+#userinput {
+  border: 1px solid #6720ca;
+}
