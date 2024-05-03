@@ -76,6 +76,8 @@ export function getParameters(): ConjugationParameters {
   let pronoun: Pronoun;
   switch (tense) {
     case Tense.ImperativoAfirmativo:
+      pronoun = getImperativePronoun()
+      break
     case Tense.ImperativoNegativo:
       pronoun = getImperativePronoun()
       break
