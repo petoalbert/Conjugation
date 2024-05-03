@@ -59,7 +59,29 @@ function getPrononun(): Pronoun {
   return pronouns[randomIndex];
 }
 
+function getImperativePronoun(): Pronoun {
+  const pronouns = [
+    Pronoun.Tu,
+    Pronoun.Usted,
+    Pronoun.Nosotros,
+    Pronoun.Vosotros,
+    Pronoun.Ustedes
+  ]
+  const randomIndex = Math.floor(Math.random() * pronouns.length);
+  return pronouns[randomIndex];
+}
+
 export function getParameters(): ConjugationParameters {
+  const tense = getTense();
+  let pronoun: Pronoun;
+  switch (tense) {
+    case Tense.ImperativoAfirmativo:
+    case Tense.ImperativoNegativo:
+      pronoun = getImperativePronoun()
+      break
+    default:
+      pronoun = getPrononun()
+  }
   return {
     verb: getVerb(),
     tense: getTense(),
