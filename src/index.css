@@ -33,6 +33,10 @@
   position: relative;
   bottom: 0;
   right: auto;
+  margin-right: auto;
+  margin-left: auto;
+  min-width: 300px;
+  max-width: 500px;
 }
 
 .success {

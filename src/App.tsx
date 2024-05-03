@@ -52,10 +52,9 @@ export default function ConjugationGame() {
   };
 
   return (
-    <div className="container" id="main">
-      <div className="row text-center fixed-bottom">
-        <div className="col-sm"></div>
-        <div className="mb-xl-5 col-xl-2 p-4" id="second">
+    <div id="main">
+      <div className="text-center fixed-bottom">
+        <div className="mb-xl-5 p-4" id="second">
           {tasks.map(t =>
             <div key={t.id} className="card rounded border border-primary mb-2 animated-element shadow">
               <Task params={t.params} />
@@ -87,7 +86,6 @@ export default function ConjugationGame() {
             </label>
           </div>
         </div>
-        <div className="col-sm"></div>
       </div>
     </div>
   );
