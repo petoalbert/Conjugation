@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { ConjugationParameters, getParameters } from "./ConjugationParameters";
+import { ConjugationParameters, getOnlyIrregularParameters, getParameters } from "./ConjugationParameters";
 import Task from "./Task";
 import { v4 as uuidv4 } from 'uuid';
 import { TaskResult } from "./TaskResult";
@@ -14,11 +14,16 @@ type TaskData = {
 }
 
 export default function ConjugationGame() {
+  const [onlyIrregular, setOnlyIrregular] = useState<boolean>(false)
   const [inputText, setInputText] = useState('');
   const [tasks, setTasks] = useState<TaskData[]>([{ id: uuidv4(), params: getParameters(), userInput: null }])
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(event.target.value);
+  };
+
+  const handleCheckboxChange = () => {
+    setOnlyIrregular(prevState => !prevState);
   };
 
   const handleCheck = () => {
@@ -28,7 +33,7 @@ export default function ConjugationGame() {
       const last = prevTasks[prevTasks.length - 1]
       const newTask = {
         id: uuidv4(),
-        params: getParameters(),
+        params: onlyIrregular ? getOnlyIrregularParameters() : getParameters(),
         userInput: null
       }
 
@@ -70,6 +75,16 @@ export default function ConjugationGame() {
               aria-label={tenseToString(tasks[tasks.length - 1].params.tense)}
               aria-describedby="basic-addon1"
             />
+          </div>
+          <div>
+            <label>
+              <input
+                type="checkbox"
+                checked={onlyIrregular}
+                onChange={handleCheckboxChange}
+              />
+              Only irregular forms
+            </label>
           </div>
         </div>
         <div className="col-sm"></div>
