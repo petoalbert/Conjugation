@@ -74,14 +74,17 @@ export default function ConjugationGame() {
               aria-describedby="basic-addon1"
             />
           </div>
-          <div>
-            <label>
-              <input
-                type="checkbox"
-                checked={onlyIrregular}
-                onChange={handleCheckboxChange}
-              />
-              Only irregular forms
+          <div className="form-switch">
+            <input
+              id="only-irregular"
+              className="form-check-input"
+              type="checkbox"
+              role="switch"
+              checked={onlyIrregular}
+              onChange={handleCheckboxChange}
+            />
+            <label className="form-check-label" htmlFor="only-irregular">
+              Only irregularities
             </label>
           </div>
         </div>
