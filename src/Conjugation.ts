@@ -4,11 +4,42 @@ import { Pronoun } from "./Pronoun"
 import { verbs } from "./IrregularVerbs"
 
 export function conjugate(verb: string, tense: Tense, pronoun: Pronoun): string | undefined {
-    return conjugateIrregular(verb, tense, pronoun) ?? conjugateRegular(verb, tense, pronoun)
+    let base = verb
+    let reflexivePronoun: string | null = null
+    let prefix: string = ""
+    let suffix: string = ""
+    
+    if (verb.endsWith("se")) {
+        switch (pronoun) {
+            case Pronoun.Yo: reflexivePronoun = "me"; break
+            case Pronoun.Tu: reflexivePronoun = "te"; break
+            case Pronoun.Usted: reflexivePronoun = "se"; break
+            case Pronoun.Nosotros: reflexivePronoun = "nos"; break
+            case Pronoun.Vosotros: reflexivePronoun = "os"; break
+            case Pronoun.Ustedes: reflexivePronoun = "se"; break
+        }
+
+        base = verb.slice(0, -2)
+    }
+
+    switch (tense) {
+        case Tense.IndicativoPresente: prefix = reflexivePronoun ? reflexivePronoun + " " : "" ; break;
+        case Tense.IndicativoImperfecto: prefix = reflexivePronoun ? reflexivePronoun + " " : "" ; break;
+        case Tense.IndicativoIndefinido: prefix = reflexivePronoun ? reflexivePronoun + " " : "" ; break;
+        case Tense.IndicativoFuturoImperfecto: prefix = reflexivePronoun ? reflexivePronoun + " " : "" ; break;
+        case Tense.IndicativoCondicional: prefix = reflexivePronoun ? reflexivePronoun + " " : "" ; break;
+        case Tense.SubjuntivoPresente: prefix = reflexivePronoun ? reflexivePronoun + " " : "" ; break;
+        case Tense.ImperativoAfirmativo: suffix = reflexivePronoun ?? ""; break;
+        case Tense.ImperativoNegativo: prefix = "no " + (reflexivePronoun ? reflexivePronoun + " " : "") ; break;
+    }
+
+    let conjugatedBase = conjugateIrregular(verb, base, tense, pronoun) ?? conjugateRegular(base, tense, pronoun)
+
+    return prefix + conjugatedBase + suffix
 }
 
-export function conjugateIrregular(verb: string, tense: Tense, pronoun: Pronoun): string | undefined {
-    return verbs.get(verb)?.forms(verb)?.get(tense)?.get(pronoun)
+export function conjugateIrregular(verb: string, base: string, tense: Tense, pronoun: Pronoun): string | undefined {
+    return verbs.get(verb)?.forms(base)?.get(tense)?.get(pronoun)
 }
 
 function conjugateRegular(verb: string, tense: Tense, pronoun: Pronoun): string | undefined {
@@ -26,11 +57,11 @@ function conjugateRegular(verb: string, tense: Tense, pronoun: Pronoun): string 
 }
 
 function determineVerbType(verb: string): VerbType | null {
-    if (verb.endsWith("ar")) {
+    if (verb.endsWith("ar") || verb.endsWith("arse")) {
         return VerbType.AR
-    } else if (verb.endsWith("er")) {
+    } else if (verb.endsWith("er") || verb.endsWith("erse")) {
         return VerbType.ER
-    } else if (verb.endsWith("ir")) {
+    } else if (verb.endsWith("ir") || verb.endsWith("irse")) {
         return VerbType.IR
     } else {
         return null
@@ -50,7 +81,16 @@ const {
 } = Tense
 
 function conjugateAr(verb: string, tense: Tense, pronoun: Pronoun): string | undefined {
-    let base = verb.slice(0, -2)
+    let base: string
+    let reflexive: boolean
+    
+    if (verb.endsWith("arse")) {
+        base = verb.slice(0, -4)
+        reflexive = true
+    } else {
+        base = verb.slice(0, -2)
+        reflexive = false
+    }
 
     switch (tense) {
         case IndicativoPresente:
@@ -120,11 +160,11 @@ function conjugateAr(verb: string, tense: Tense, pronoun: Pronoun): string | und
         case ImperativoNegativo:
             switch (pronoun) {
                 case Yo: return undefined
-                case Tu: return "no " + base + "es"
-                case Usted: return "no " + base + "e"
-                case Nosotros: return "no " + base + "emos"
-                case Vosotros: return "no " + base + "eis"
-                case Ustedes: return "no " + base + "en"
+                case Tu: return base + "es"
+                case Usted: return base + "e"
+                case Nosotros: return base + "emos"
+                case Vosotros: return base + "eis"
+                case Ustedes: return base + "en"
 
             }
     }
@@ -200,11 +240,11 @@ function conjugateEr(verb: string, tense: Tense, pronoun: Pronoun): string | und
         case ImperativoNegativo:
             switch (pronoun) {
                 case Yo: return undefined
-                case Tu: return "no " + base + "as"
-                case Usted: return "no " + base + "a"
-                case Nosotros: return "no " + base + "amos"
-                case Vosotros: return "no " + base + "áis"
-                case Ustedes: return "no " + base + "an"
+                case Tu: return base + "as"
+                case Usted: return base + "a"
+                case Nosotros: return base + "amos"
+                case Vosotros: return base + "áis"
+                case Ustedes: return base + "an"
 
             }
     }
@@ -281,11 +321,11 @@ function conjugateIr(verb: string, tense: Tense, pronoun: Pronoun): string | und
         case ImperativoNegativo:
             switch (pronoun) {
                 case Yo: return undefined
-                case Tu: return "no " + base + "as"
-                case Usted: return "no " + base + "a"
-                case Nosotros: return "no " + base + "amos"
-                case Vosotros: return "no " + base + "áis"
-                case Ustedes: return "no " + base + "an"
+                case Tu: return base + "as"
+                case Usted: return base + "a"
+                case Nosotros: return base + "amos"
+                case Vosotros: return base + "áis"
+                case Ustedes: return base + "an"
             }
     }
 }
