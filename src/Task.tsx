@@ -4,7 +4,7 @@ import { pronounToString } from "./Pronoun";
 import { ConjugationParameters } from "./ConjugationParameters";
 
 export default function Task({ params }: { params: ConjugationParameters }) {
-    const translateLink = "https://translate.google.com/?sl=es&tl=en&text=" + params.verb
+    const translateLink = "https://dle.rae.es/" + params.verb
     const wordrefLink = "https://www.wordreference.com/conj/esverbs.aspx?v=" + params.verb
 
     return (
