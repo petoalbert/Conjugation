@@ -20,6 +20,12 @@ import { contar } from "./irregularities/Contar";
 import { cruzar } from "./irregularities/Cruzar";
 import { dar } from "./irregularities/Dar";
 import { decir } from "./irregularities/Decir";
+import { dirigir } from "./irregularities/Dirigir";
+import { discernir } from "./irregularities/Discernir";
+import { distinguir } from "./irregularities/Distinguir";
+import { dormir } from "./irregularities/Dormir";
+import { elegir } from "./irregularities/Elegir";
+import { empezar } from "./irregularities/Empezar";
 import { Irregularities } from "./irregularities/Irregularity";
 
 export const verbs = new Map<string, Irregularities>([
@@ -1292,4 +1298,48 @@ export const verbs = new Map<string, Irregularities>([
     ["decir", decir],
     ["bendecir", decir],
     ["maldecir", decir],
+    ["dirigir", dirigir],
+    ["afligir", dirigir],
+    ["astringir", dirigir],
+    ["compungir", dirigir],
+    ["convergir", dirigir],
+    ["dirigir", dirigir],
+    ["divergir", dirigir],
+    ["erigir", dirigir],
+    ["exigir", dirigir],
+    ["fingir", dirigir],
+    ["fulgir", dirigir],
+    ["fungir", dirigir],
+    ["infligir", dirigir],
+    ["infringir", dirigir],
+    ["mugir", dirigir],
+    ["refringir", dirigir],
+    ["refulgir", dirigir],
+    ["restringir", dirigir],
+    ["resurgir", dirigir],
+    ["sumergir", dirigir],
+    ["surgir", dirigir],
+    ["teledirigir", dirigir],
+    ["transigir", dirigir],
+    ["ungir", dirigir],
+    ["urgir", dirigir],
+    ["discernir", discernir],
+    ["cernir", discernir],
+    ["concernir", discernir],
+    ["hendir", discernir],
+    ["distinguir", distinguir],
+    ["extinguir", distinguir],
+    ["dormir", dormir],
+    ["morir", dormir],
+    ["premorir", dormir],
+    ["elegir", elegir],
+    ["colegir", elegir],
+    ["corregir", elegir],
+    ["reelegir", elegir],
+    ["regir", elegir],
+    ["empezar", empezar],
+    ["comenzar", empezar],
+    ["empezar", empezar],
+    ["recomenzar", empezar],
+    ["trompezar", empezar],
 ]);
