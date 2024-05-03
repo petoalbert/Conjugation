@@ -26,6 +26,7 @@ import { distinguir } from "./irregularities/Distinguir";
 import { dormir } from "./irregularities/Dormir";
 import { elegir } from "./irregularities/Elegir";
 import { empezar } from "./irregularities/Empezar";
+import { erguir } from "./irregularities/Erguir";
 import { Irregularities } from "./irregularities/Irregularity";
 
 export const verbs = new Map<string, Irregularities>([
@@ -1342,4 +1343,5 @@ export const verbs = new Map<string, Irregularities>([
     ["empezar", empezar],
     ["recomenzar", empezar],
     ["trompezar", empezar],
+    ["erguir", erguir],
 ]);
