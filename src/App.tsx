@@ -65,8 +65,7 @@ export default function ConjugationGame() {
             <span className="input-group-text" id="basic-addon1">{pronounToString(tasks[tasks.length - 1].params.pronoun)}</span>
             <input
               type="text"
-              id="userinput"
-              className="form-control"
+              className="form-control border-primary"
               value={inputText}
               onChange={handleInputChange}
               onKeyDown={handleKeyDown}

@@ -36,7 +36,7 @@
   margin-right: auto;
   margin-left: auto;
   min-width: 300px;
-  max-width: 500px;
+  max-width: 500px  ;
 }
 
 .success {
@@ -47,8 +47,4 @@
 .failure {
   color: red;
   animation: fadein 500ms;
-}
-
-#userinput {
-  border: 1px solid #6720ca;
 }
