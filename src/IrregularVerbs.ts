@@ -41,6 +41,10 @@ import { pagar } from "./irregularities/Pagar";
 import { pedir } from "./irregularities/Pedir";
 import { pensar } from "./irregularities/Pensar";
 import { perder } from "./irregularities/Perder";
+import { placer } from "./irregularities/Placer";
+import { poder } from "./irregularities/Poder";
+import { poner } from "./irregularities/Poner";
+import { poseer } from "./irregularities/Poseer";
 
 export const verbs = new Map<string, Irregularities>([
     ["actuar", actuar],
@@ -1811,4 +1815,16 @@ export const verbs = new Map<string, Irregularities>([
     ["transcender", perder],
     ["trascender", perder],
     ["verter", perder],
+    ["placer", placer],
+    ["complacer", placer],
+    ["poder", poder],
+    ["poner", poner],
+    ["creer", poseer],
+    ["desposeer", poseer],
+    ["desproveer", poseer],
+    ["peerse", poseer],
+    ["poseer", poseer],
+    ["proveer", poseer],
+    ["releer", poseer],
+    ["sobreseer", poseer],
 ]);
