@@ -11,13 +11,13 @@ const {
     IndicativoIndefinido
 } = Tense
 
-export const dormir: Irregularities = {
+export const mover: Irregularities = {
     forms: function (string) {
         let oIndex = string.lastIndexOf("o")
 
         let base = string.slice(0, oIndex)
 
-        let rest = string.slice(oIndex + 1, -2) // drop ir
+        let rest = string.slice(oIndex + 1, -2) // drop er
 
         return new Map([
             [IndicativoPresente, new Map([
@@ -26,29 +26,20 @@ export const dormir: Irregularities = {
                 [Usted, base + "ue" + rest + "e"],
                 [Ustedes, base + "ue" + rest + "en"],
             ])],
-            [IndicativoIndefinido, new Map([
-                [Usted, base + "u" + rest + "ió"],
-                [Ustedes, base + "u" + rest + "ieron"],
-            ])],
             [SubjuntivoPresente, new Map([
                 [Yo, base + "ue" + rest + "a"],
                 [Tu, base + "ue" + rest + "as"],
                 [Usted, base + "ue" + rest + "a"],
-                [Nosotros, base + "u" + rest + "amos"],
-                [Vosotros, base + "u" + rest + "áis"],
                 [Ustedes, base + "ue" + rest + "an"],
             ])],
             [ImperativoAfirmativo, new Map([
                 [Tu, base + "ue" + rest + "e"],
                 [Usted, base + "ue" + rest + "a"],
-                [Nosotros, base + "u" + rest + "amos"],
                 [Ustedes, base + "ue" + rest + "an"],
             ])],
             [ImperativoNegativo, new Map([
                 [Tu, base + "ue" + rest + "as"],
                 [Usted, base + "ue" + rest + "a"],
-                [Nosotros, base + "u" + rest + "amos"],
-                [Vosotros, base + "u" + rest + "áis"],
                 [Ustedes, base + "ue" + rest + "an"]
             ])]
         ])
