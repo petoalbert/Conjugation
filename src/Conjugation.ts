@@ -1,7 +1,7 @@
 import { Tense } from "./Tense"
 import { VerbType } from "./VerbType"
 import { Pronoun } from "./Pronoun"
-import { verbs } from "./IrregularVerbs"
+import { irregularVerbs } from "./IrregularVerbs"
 
 export function conjugate(verb: string, tense: Tense, pronoun: Pronoun): string | undefined {
     let base = verb
@@ -39,7 +39,7 @@ export function conjugate(verb: string, tense: Tense, pronoun: Pronoun): string 
 }
 
 export function conjugateIrregular(verb: string, base: string, tense: Tense, pronoun: Pronoun): string | undefined {
-    return verbs.get(verb)?.forms(base)?.get(tense)?.get(pronoun)
+    return irregularVerbs.get(verb)?.forms(base)?.get(tense)?.get(pronoun)
 }
 
 function conjugateRegular(verb: string, tense: Tense, pronoun: Pronoun): string | undefined {

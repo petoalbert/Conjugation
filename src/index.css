@@ -48,3 +48,9 @@
   color: red;
   animation: fadein 500ms;
 }
+
+#checkboxes {
+  margin-right: auto;
+  margin-left: auto;
+  width: 250px; 
+}

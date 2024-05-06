@@ -15,15 +15,20 @@ type TaskData = {
 
 export default function ConjugationGame() {
   const [onlyIrregular, setOnlyIrregular] = useState<boolean>(false)
+  const [onlyTop500, setOnlyTop500] = useState<boolean>(true)
   const [inputText, setInputText] = useState('');
-  const [tasks, setTasks] = useState<TaskData[]>([{ id: uuidv4(), params: getParameters(), userInput: null }])
+  const [tasks, setTasks] = useState<TaskData[]>([{ id: uuidv4(), params: getParameters(onlyTop500), userInput: null }])
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(event.target.value);
   };
 
-  const handleCheckboxChange = () => {
+  const handleOnlyIrregularChange = () => {
     setOnlyIrregular(prevState => !prevState);
+  };
+
+  const handleOnlyTop500Change = () => {
+    setOnlyTop500(prevState => !prevState);
   };
 
   const handleCheck = () => {
@@ -33,7 +38,7 @@ export default function ConjugationGame() {
       const last = prevTasks[prevTasks.length - 1]
       const newTask = {
         id: uuidv4(),
-        params: onlyIrregular ? getOnlyIrregularParameters() : getParameters(),
+        params: onlyIrregular ? getOnlyIrregularParameters(onlyTop500) : getParameters(onlyTop500),
         userInput: null
       }
 
@@ -53,7 +58,7 @@ export default function ConjugationGame() {
 
   return (
     <div id="main">
-      <div className="text-center fixed-bottom">
+      <div className="fixed-bottom">
         <div className="mb-xl-5 p-4" id="second">
           {tasks.map(t =>
             <div key={t.id} className="card rounded border border-primary mb-2 animated-element shadow">
@@ -74,18 +79,33 @@ export default function ConjugationGame() {
               aria-describedby="basic-addon1"
             />
           </div>
-          <div className="form-switch">
-            <input
-              id="only-irregular"
-              className="form-check-input"
-              type="checkbox"
-              role="switch"
-              checked={onlyIrregular}
-              onChange={handleCheckboxChange}
-            />
-            <label className="form-check-label" htmlFor="only-irregular">
-              Only irregularities
-            </label>
+          <div id="checkboxes">
+            <div className="form-check form-switch">
+              <input
+                id="only-irregular"
+                className="form-check-input"
+                type="checkbox"
+                role="switch"
+                checked={onlyIrregular}
+                onChange={handleOnlyIrregularChange}
+              />
+              <label className="form-check-label" htmlFor="only-irregular">
+                Only irregularities
+              </label>
+            </div>
+            <div className="form-check form-switch">
+              <input
+                id="only-top500"
+                className="form-check-input"
+                type="checkbox"
+                role="switch"
+                checked={onlyTop500}
+                onChange={handleOnlyTop500Change}
+              />
+              <label className="form-check-label" htmlFor="only-irregular">
+                Only most common verbs
+              </label>
+            </div>
           </div>
         </div>
       </div>

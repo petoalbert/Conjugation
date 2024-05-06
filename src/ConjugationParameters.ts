@@ -1,12 +1,19 @@
 import { Tense } from "./Tense";
 import { Pronoun } from "./Pronoun";
-import { verbs } from "./IrregularVerbs";
+import { irregularVerbs } from "./IrregularVerbs";
 import { Irregularities } from "./irregularities/Irregularity";
+import { top500Verbs } from "./Top500Verbs";
 
 const irregularities = new Map<Irregularities, string[]>();
 
+const top500IrregularVerbs = new Array<string>()
+top500Verbs.forEach(e => { if (irregularVerbs.has(e)) top500IrregularVerbs.push(e) })
+
+const allVerbs = Array.from(irregularVerbs.keys())
+top500Verbs.forEach(e => { if (!irregularVerbs.has(e)) allVerbs.push(e) })
+
 // Iterate over the original map's entries
-verbs.forEach((value, key) => {
+irregularVerbs.forEach((value, key) => {
   // If the value is already in the reversed map, add the key to its array
   if (irregularities.has(value)) {
     irregularities.get(value)!.push(key);
@@ -21,7 +28,7 @@ function getRandom<T>(l: T[]): T {
   return l[randomIndex]
 }
 
-function getVerb():string {
+function getIrregularVerb():string {
   return getRandom(getRandom(Array.from(irregularities.values())))
 }
 
@@ -71,8 +78,10 @@ function getImperativePronoun(): Pronoun {
   return pronouns[randomIndex];
 }
 
-export function getParameters(): ConjugationParameters {
+export function getParameters(onlyTop500: boolean): ConjugationParameters {
+  const verb = onlyTop500 ? getRandom(top500Verbs) : getRandom(allVerbs)
   const tense = getTense();
+
   let pronoun: Pronoun;
   switch (tense) {
     case Tense.ImperativoAfirmativo:
@@ -85,15 +94,20 @@ export function getParameters(): ConjugationParameters {
       pronoun = getPrononun()
   }
   return {
-    verb: getVerb(),
-    tense: getTense(),
-    pronoun: getPrononun()
+    verb: verb,
+    tense: tense,
+    pronoun: pronoun
   }
 }
 
-export function getOnlyIrregularParameters(): ConjugationParameters {
-  const verb = getVerb()
-  let forms = verbs.get(verb)?.forms(verb)
+export function getOnlyIrregularParameters(onlyTop500: boolean): ConjugationParameters {
+  let verb: string
+  if (onlyTop500) {
+    verb = getRandom(top500IrregularVerbs)
+  } else {
+    verb = getIrregularVerb()
+  }
+  let forms = irregularVerbs.get(verb)?.forms(verb)
   let tense = getRandom(Array.from(forms?.keys() ?? []))
   let pronoun = getRandom(Array.from(forms?.get(tense)?.keys() ?? []))
   // TODO find better way to handle undefined ^^^

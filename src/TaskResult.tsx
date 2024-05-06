@@ -7,10 +7,10 @@ export function TaskResult({ params, input }: { params: ConjugationParameters, i
     const trimmedInput = input.toLowerCase().trim()
 
     if (trimmedInput === correctForm) {
-        return (<p className="success">{correctForm} &#128526;</p>)
+        return (<p className="text-center success">{correctForm} &#128526;</p>)
     } else if (input.trim() === "") {
-        return (<p className="failure">No guess &#128529;<br />{correctForm}</p>)
+        return (<p className="text-center failure">No guess &#128529;<br />{correctForm}</p>)
     } else {
-        return (<p className="failure"><s>{trimmedInput}</s> &#128546;<br />{correctForm}</p>)
+        return (<p className="text-center failure"><s>{trimmedInput}</s> &#128546;<br />{correctForm}</p>)
     }
 }

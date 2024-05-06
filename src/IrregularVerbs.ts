@@ -68,7 +68,7 @@ import { volcar } from "./irregularities/Volcar";
 import { yacer } from "./irregularities/Yacer";
 import { zurcir } from "./irregularities/Zurcir";
 
-export const verbs = new Map<string, Irregularities>([
+export const irregularVerbs = new Map<string, Irregularities>([
     ["actuar", actuar],
     ["acentuar", actuar],
     ["anticuar", actuar],

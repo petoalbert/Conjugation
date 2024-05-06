@@ -12,31 +12,31 @@ const {
 
 export const agradecer: Irregularities = {
     forms: function (string) {
-        let base = string.slice(0, -4) // ecer
+        let base = string.slice(0, -3) // cer
 
         return new Map([
             [IndicativoPresente, new Map([
-                [Yo, base + "ezco"],
+                [Yo, base + "zco"],
             ])],
             [SubjuntivoPresente, new Map([
-                [Yo, base + "ezca"],
-                [Tu, base + "ezcas"],
-                [Usted, base + "ezca"],
-                [Nosotros, base + "ezcamos"],
-                [Vosotros, base + "ezcáis"],
-                [Ustedes, base + "ezcan"],
+                [Yo, base + "zca"],
+                [Tu, base + "zcas"],
+                [Usted, base + "zca"],
+                [Nosotros, base + "zcamos"],
+                [Vosotros, base + "zcáis"],
+                [Ustedes, base + "zcan"],
             ])],
             [ImperativoAfirmativo, new Map([
-                [Usted, base + "ezca"],
-                [Nosotros, base + "ezcamos"],
-                [Ustedes, base + "ezcan"],
+                [Usted, base + "zca"],
+                [Nosotros, base + "zcamos"],
+                [Ustedes, base + "zcan"],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, base + "ezcas"],
-                [Usted, base + "ezca"],
-                [Nosotros, base + "ezcamos"],
-                [Vosotros, base + "ezcáis"],
-                [Ustedes, base + "ezcan"]
+                [Tu, base + "zcas"],
+                [Usted, base + "zca"],
+                [Nosotros, base + "zcamos"],
+                [Vosotros, base + "zcáis"],
+                [Ustedes, base + "zcan"]
             ])]
         ])
     }
