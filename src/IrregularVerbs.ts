@@ -1734,7 +1734,7 @@ export const irregularVerbs = new Map<string, Irregularities>([
     ["emporcar", volcar],
     ["revolcar", volcar],
     ["trastrocar", volcar],
-    ["trocar   ", volcar],
+    ["trocar", volcar],
     ["yacer", yacer],
     ["subyacer", yacer],
     ["fruncir", zurcir],
