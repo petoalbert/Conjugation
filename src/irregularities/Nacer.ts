@@ -11,6 +11,7 @@ const {
     ImperativoNegativo
 } = Tense
 
+// TODO is this the same as nacer/agradecer/conocer?
 export const nacer: Irregularities = {
     forms: function (string) {
         let base = string.slice(0, -3) // cer

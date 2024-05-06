@@ -30,7 +30,7 @@ export const negar: Irregularities = {
                 [Usted, base + "e" + rest + "ué"],
             ])],
             [SubjuntivoPresente, new Map([
-                [Yo, base + "ieue" + rest + "ue"],
+                [Yo, base + "ie" + rest + "ue"],
                 [Tu, base + "ie" + rest + "ues"],
                 [Usted, base + "ie" + rest + "ue"],
                 [Nosotros, base + "e" + rest + "uemos"],
@@ -40,7 +40,7 @@ export const negar: Irregularities = {
             [ImperativoAfirmativo, new Map([
                 [Tu, base + "ie" + rest + "a"],
                 [Usted, base + "ie" + rest + "ue"],
-                [Nosotros, base + "u" + rest + "uemos"],
+                [Nosotros, base + "e" + rest + "uemos"],
                 [Ustedes, base + "ue" + rest + "uen"],
             ])],
             [ImperativoNegativo, new Map([
