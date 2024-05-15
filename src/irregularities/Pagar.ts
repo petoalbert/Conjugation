@@ -30,8 +30,8 @@ export const pagar: Irregularities = {
                 [Ustedes, base + "guen"],
             ])],
             [ImperativoAfirmativo, new Map([
-                [Tu, base + "gue"],
-                [Usted, base + "guemos"],
+                [Usted, base + "gue"],
+                [Nosotros, base + "guemos"],
                 [Ustedes, base + "guen"],
             ])],
             [ImperativoNegativo, new Map([
