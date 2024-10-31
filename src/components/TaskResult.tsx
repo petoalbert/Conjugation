@@ -1,6 +1,6 @@
 import React from "react";
-import { conjugate } from "./Conjugation";
-import { ConjugationParameters } from "./ConjugationParameters";
+import { conjugate } from "../utils/Conjugation";
+import { ConjugationParameters } from "../utils/ConjugationParameters";
 
 export function TaskResult({ params, input }: { params: ConjugationParameters, input: string }) {
     const correctForm = conjugate(params.verb, params.tense, params.pronoun)

@@ -1,11 +1,11 @@
 import React from "react";
 import { useState } from "react";
-import { ConjugationParameters, getOnlyIrregularParameters, getParameters } from "./ConjugationParameters";
-import Task from "./Task";
+import { ConjugationParameters, getOnlyIrregularParameters, getParameters } from "../utils/ConjugationParameters";
+import Task from "../components/Task";
 import { v4 as uuidv4 } from 'uuid';
-import { TaskResult } from "./TaskResult";
-import { pronounToString } from "./Pronoun";
-import { tenseToString } from "./Tense";
+import { TaskResult } from "../components/TaskResult";
+import { pronounToString } from "../utils/Pronoun";
+import { tenseToString } from "../utils/Tense";
 
 type TaskData = {
   id: string;

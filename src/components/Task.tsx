@@ -1,7 +1,7 @@
 import React from "react";
-import { tenseToString } from "./Tense";
-import { pronounToString } from "./Pronoun";
-import { ConjugationParameters } from "./ConjugationParameters";
+import { tenseToString } from "../utils/Tense";
+import { pronounToString } from "../utils/Pronoun";
+import { ConjugationParameters } from "../utils/ConjugationParameters";
 
 export default function Task({ params }: { params: ConjugationParameters }) {
     const translateLink = "https://www.rae.es/drae2001/" + params.verb
