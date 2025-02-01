@@ -58,19 +58,21 @@ export default function ConjugationGame() {
 
   return (
     <div id="main">
-      <div className="fixed-bottom">
-        <div className="mb-xl-5 p-4" id="second">
-          {tasks.map(t =>
-            <div key={t.id} className="card rounded border border-primary mb-2 animated-element shadow">
+      <div className="fixed bottom-0 w-full">
+        <div className="mb-20 p-4" id="second">
+          {tasks.map(t => (
+            <div key={t.id} className="rounded border border-blue-500 mb-2 shadow-lg">
               <Task params={t.params} />
               {t.userInput != null && <TaskResult params={t.params} input={t.userInput} />}
             </div>
-          )}
-          <div className="input-group">
-            <span className="input-group-text" id="basic-addon1">{pronounToString(tasks[tasks.length - 1].params.pronoun)}</span>
+          ))}
+          <div className="flex items-center border border-gray-300 rounded-md shadow-sm">
+            <span className="px-3 py-2 bg-gray-100 text-gray-700 border-r border-gray-300 rounded-l-md">
+              {pronounToString(tasks[tasks.length - 1].params.pronoun)}
+            </span>
             <input
               type="text"
-              className="form-control border-primary"
+              className="flex-1 px-3 py-2 border-none focus:ring-2 focus:ring-blue-500 rounded-r-md"
               value={inputText}
               onChange={handleInputChange}
               onKeyDown={handleKeyDown}
@@ -78,34 +80,6 @@ export default function ConjugationGame() {
               aria-label={tenseToString(tasks[tasks.length - 1].params.tense)}
               aria-describedby="basic-addon1"
             />
-          </div>
-          <div id="checkboxes">
-            <div className="form-check form-switch">
-              <input
-                id="only-irregular"
-                className="form-check-input"
-                type="checkbox"
-                role="switch"
-                checked={onlyIrregular}
-                onChange={handleOnlyIrregularChange}
-              />
-              <label className="form-check-label" htmlFor="only-irregular">
-                Only irregularities
-              </label>
-            </div>
-            <div className="form-check form-switch">
-              <input
-                id="only-top500"
-                className="form-check-input"
-                type="checkbox"
-                role="switch"
-                checked={onlyTop500}
-                onChange={handleOnlyTop500Change}
-              />
-              <label className="form-check-label" htmlFor="only-irregular">
-                Only most common verbs
-              </label>
-            </div>
           </div>
         </div>
       </div>
