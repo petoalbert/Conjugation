@@ -13,7 +13,7 @@ const {
 
 export const perder: Irregularities = {
     forms: function (string) {
-        let oIndex = string.lastIndexOf("e")
+        let oIndex = string.slice(0, -2).lastIndexOf("e")
 
         let base = string.slice(0, oIndex)
 
