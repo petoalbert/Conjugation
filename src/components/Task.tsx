@@ -61,7 +61,7 @@ export default function Task() {
         {isTooltipVisible && (
           <div
             data-tooltip="tooltip"
-            className="absolute left-1/2 -translate-x-1/2 bottom-[70px] z-[150] whitespace-normal break-words rounded-lg bg-black py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
+            className="absolute left-1/2 -translate-x-1/2 bottom-[70px] z-[150] whitespace-normal break-words rounded-lg bg-gray-500 py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
           >
             <div className="text-left">
               <ul>
