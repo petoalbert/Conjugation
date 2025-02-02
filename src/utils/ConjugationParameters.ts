@@ -47,7 +47,8 @@ function getTense(): Tense {
     Tense.IndicativoCondicional,
     Tense.SubjuntivoPresente,
     Tense.ImperativoAfirmativo,
-    Tense.ImperativoNegativo
+    Tense.ImperativoNegativo,
+    Tense.SubjuntivoImperfecto
   ]
   const randomIndex = Math.floor(Math.random() * tenses.length);
   return tenses[randomIndex];
