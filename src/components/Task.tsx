@@ -1,17 +1,19 @@
-import React, { useEffect, useState } from "react";
-import { getOnlyIrregularParameters } from "../utils/ConjugationParameters";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { getParameters } from "../utils/ConjugationParameters";
 import { pronounToString } from "../utils/Pronoun";
 import { tenseToString } from "../utils/Tense";
-import Input from "./Input";
 import translations from "../utils/translations.json";
+import Input from "./Input";
+
+const onlyTop500 = true;
 
 export default function Task() {
-  const [params, setParams] = useState(getOnlyIrregularParameters(true));
+  const [params, setParams] = useState(getParameters(onlyTop500));
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  const translationMap = translations as Record<string, string[]>;
-  const translation = translationMap[params.verb];
+  const translationMap = useMemo(() => translations as Record<string, string[]>, []);
+  const translation = useMemo(() => translationMap[params.verb], [params.verb, translationMap]);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -19,31 +21,27 @@ export default function Task() {
     };
 
     setIsMobile(window.matchMedia("(max-width: 768px)").matches);
-
-    console.log(`isMobile? ${window.matchMedia("(max-width: 768px)").matches}`);
-
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = useCallback(() => {
     if (!isMobile) {
       setIsTooltipVisible(true);
     }
-  };
+  }, [isMobile]);
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = useCallback(() => {
     if (!isMobile) {
       setIsTooltipVisible(false);
     }
-  };
+  }, [isMobile]);
 
-  const toggleTooltip = () => {
+  const toggleTooltip = useCallback(() => {
     if (isMobile) {
-      console.log(`Mobile device detected, not toggling tooltip ${isTooltipVisible}`);
       setIsTooltipVisible(!isTooltipVisible);
     }
-  };
+  }, [isMobile]);
 
   return (
     <div className="text-center">
@@ -78,7 +76,7 @@ export default function Task() {
           </h6>
         </div>
       </div>
-      <Input key={params.verb} params={params} onFinish={() => setParams(getOnlyIrregularParameters(true))} />
+      <Input key={params.verb} params={params} onFinish={() => setParams(getParameters(onlyTop500))} />
     </div>
   );
 }
