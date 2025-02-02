@@ -21,34 +21,34 @@ export const empezar: Irregularities = {
 
         return new Map([
             [IndicativoPresente, new Map([
-                [Yo, base + "ie" + rest + "zo"],
-                [Tu, base + "ie" + rest + "zas"],
-                [Usted, base + "ie" + rest + "za"],
-                [Ustedes, base + "ie" + rest + "zan"],
+                [Yo, [base + "ie" + rest + "zo"]],
+                [Tu, [base + "ie" + rest + "zas"]],
+                [Usted, [base + "ie" + rest + "za"]],
+                [Ustedes, [base + "ie" + rest + "zan"]],
             ])],
             [IndicativoIndefinido, new Map([
-                [Yo, base + "ie" + rest + "cé"],
+                [Yo, [base + "ie" + rest + "cé"]],
             ])],
             [SubjuntivoPresente, new Map([
-                [Yo, base + "ie" + rest + "ce"],
-                [Tu, base + "ie" + rest + "ces"],
-                [Usted, base + "ie" + rest + "ce"],
-                [Nosotros, base + "e" + rest + "cemos"],
-                [Vosotros, base + "e" + rest + "céis"],
-                [Ustedes, base + "ie" + rest + "cen"],
+                [Yo, [base + "ie" + rest + "ce"]],
+                [Tu, [base + "ie" + rest + "ces"]],
+                [Usted, [base + "ie" + rest + "ce"]],
+                [Nosotros, [base + "e" + rest + "cemos"]],
+                [Vosotros, [base + "e" + rest + "céis"]],
+                [Ustedes, [base + "ie" + rest + "cen"]],
             ])],
             [ImperativoAfirmativo, new Map([
-                [Tu, base + "ie" + rest + "za"],
-                [Usted, base + "ie" + rest + "ce"],
-                [Nosotros, base + "e" + rest + "cemos"],
-                [Ustedes, base + "ie" + rest + "cen"],
+                [Tu, [base + "ie" + rest + "za"]],
+                [Usted, [base + "ie" + rest + "ce"]],
+                [Nosotros, [base + "e" + rest + "cemos"]],
+                [Ustedes, [base + "ie" + rest + "cen"]],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, base + "ie" + rest + "ces"],
-                [Usted, base + "ie" + rest + "ce"],
-                [Nosotros, base + "e" + rest + "cemos"],
-                [Vosotros, base + "e" + rest + "céis"],
-                [Ustedes, base + "ie" + rest + "cen"],
+                [Tu, [base + "ie" + rest + "ces"]],
+                [Usted, [base + "ie" + rest + "ce"]],
+                [Nosotros, [base + "e" + rest + "cemos"]],
+                [Vosotros, [base + "e" + rest + "céis"]],
+                [Ustedes, [base + "ie" + rest + "cen"]],
             ])]
         ])
     }

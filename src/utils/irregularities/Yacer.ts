@@ -19,28 +19,28 @@ export const yacer: Irregularities = {
 
         return new Map([
             [IndicativoPresente, new Map([
-                [Yo, base + "yazco"],
+                [Yo, [base + "yazco"]],
             ])],
             [SubjuntivoPresente, new Map([
-                [Yo, base + "yazca"],
-                [Tu, base + "yazcas"],
-                [Usted, base + "yazca"],
-                [Nosotros, base + "yazcamos"],
-                [Vosotros, base + "yazcáis"],
-                [Ustedes, base + "yazcan"],
+                [Yo, [base + "yazca"]],
+                [Tu, [base + "yazcas"]],
+                [Usted, [base + "yazca"]],
+                [Nosotros, [base + "yazcamos"]],
+                [Vosotros, [base + "yazcáis"]],
+                [Ustedes, [base + "yazcan"]],
             ])],
             [ImperativoAfirmativo, new Map([
-                [Tu, base + "yaz"],
-                [Usted, base + "yazca"],
-                [Nosotros, base + "yazcamos"],
-                [Ustedes, base + "yazcan"],
+                [Tu, [base + "yaz"]],
+                [Usted, [base + "yazca"]],
+                [Nosotros, [base + "yazcamos"]],
+                [Ustedes, [base + "yazcan"]],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, base + "yazcas"],
-                [Usted, base + "yazca"],
-                [Nosotros, base + "yazcamos"],
-                [Vosotros, base + "yazcáis"],
-                [Ustedes, base + "yazcan"],
+                [Tu, [base + "yazcas"]],
+                [Usted, [base + "yazca"]],
+                [Nosotros, [base + "yazcamos"]],
+                [Vosotros, [base + "yazcáis"]],
+                [Ustedes, [base + "yazcan"]],
 
             ])]
         ])

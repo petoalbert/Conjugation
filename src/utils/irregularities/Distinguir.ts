@@ -19,27 +19,27 @@ export const distinguir: Irregularities = {
 
         return new Map([
             [IndicativoPresente, new Map([
-                [Yo, base + "go"]
+                [Yo, [base + "go"]]
             ])],
             [SubjuntivoPresente, new Map([
-                [Yo, base + "ga"],
-                [Tu, base + "gas"],
-                [Usted, base + "ga"],
-                [Nosotros, base + "gamos"],
-                [Vosotros, base + "gáis"],
-                [Ustedes, base + "gan"],
+                [Yo, [base + "ga"]],
+                [Tu, [base + "gas"]],
+                [Usted, [base + "ga"]],
+                [Nosotros, [base + "gamos"]],
+                [Vosotros, [base + "gáis"]],
+                [Ustedes, [base + "gan"]],
             ])],
             [ImperativoAfirmativo, new Map([
-                [Usted, base + "ga"],
-                [Nosotros, base + "gamos"],
-                [Ustedes, base + "gan"],
+                [Usted, [base + "ga"]],
+                [Nosotros, [base + "gamos"]],
+                [Ustedes, [base + "gan"]],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, base + "gas"],
-                [Usted, base + "ga"],
-                [Nosotros, base + "gamos"],
-                [Vosotros, base + "gáis"],
-                [Ustedes, base + "gan"]
+                [Tu, [base + "gas"]],
+                [Usted, [base + "ga"]],
+                [Nosotros, [base + "gamos"]],
+                [Vosotros, [base + "gáis"]],
+                [Ustedes, [base + "gan"]]
             ])]
         ])
     }

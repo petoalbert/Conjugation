@@ -20,26 +20,26 @@ export const contar: Irregularities = {
 
         return new Map([
             [IndicativoPresente, new Map([
-                [Yo, base + "ue" + rest + "o"],
-                [Tu, base + "ue" + rest + "as"],
-                [Usted, base + "ue" + rest + "a"],
-                [Ustedes, base + "ue" + rest + "an"],
+                [Yo, [base + "ue" + rest + "o"]],
+                [Tu, [base + "ue" + rest + "as"]],
+                [Usted, [base + "ue" + rest + "a"]],
+                [Ustedes, [base + "ue" + rest + "an"]],
             ])],
             [SubjuntivoPresente, new Map([
-                [Yo, base + "ue" + rest + "e"],
-                [Tu, base + "ue" + rest + "es"],
-                [Usted, base + "ue" + rest + "e"],
-                [Ustedes, base + "ue" + rest + "en"],
+                [Yo, [base + "ue" + rest + "e"]],
+                [Tu, [base + "ue" + rest + "es"]],
+                [Usted, [base + "ue" + rest + "e"]],
+                [Ustedes, [base + "ue" + rest + "en"]],
             ])],
             [ImperativoAfirmativo, new Map([
-                [Tu, base + "ue" + rest + "a"],
-                [Usted, base + "ue" + rest + "e"],
-                [Ustedes, base + "ue" + rest + "en"],
+                [Tu, [base + "ue" + rest + "a"]],
+                [Usted, [base + "ue" + rest + "e"]],
+                [Ustedes, [base + "ue" + rest + "en"]],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, base + "ue" + rest + "es"],
-                [Usted, base + "ue" + rest + "e"],
-                [Ustedes, base + "ue" + rest + "en"]
+                [Tu, [base + "ue" + rest + "es"]],
+                [Usted, [base + "ue" + rest + "e"]],
+                [Ustedes, [base + "ue" + rest + "en"]]
             ])]
         ])
     }

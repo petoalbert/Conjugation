@@ -18,31 +18,31 @@ export const jugar: Irregularities = {
     forms: function (string) {
         return new Map([
             [IndicativoPresente, new Map([
-                [Yo, "juego"],
-                [Tu, "juegas"],
-                [Usted, "juega"],
-                [Ustedes, "juegan"],
+                [Yo, ["juego"]],
+                [Tu, ["juegas"]],
+                [Usted, ["juega"]],
+                [Ustedes, ["juegan"]],
             ])],
             [SubjuntivoPresente, new Map([
-                [Yo, "juegue"],
-                [Tu, "juegues"],
-                [Usted, "juege"],
-                [Nosotros, "jugemos"],
-                [Vosotros, "jugéis"],
-                [Ustedes, "juegen"],
+                [Yo, ["juegue"]],
+                [Tu, ["juegues"]],
+                [Usted, ["juege"]],
+                [Nosotros, ["jugemos"]],
+                [Vosotros, ["jugéis"]],
+                [Ustedes, ["juegen"]],
             ])],
             [ImperativoAfirmativo, new Map([
-                [Tu, "juega"],
-                [Usted, "juegue"],
-                [Nosotros, "juguemos"],
-                [Ustedes, "jueguen"],
+                [Tu, ["juega"]],
+                [Usted, ["juegue"]],
+                [Nosotros, ["juguemos"]],
+                [Ustedes, ["jueguen"]],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, "juegues"],
-                [Usted, "juege"],
-                [Nosotros, "jugemos"],
-                [Vosotros, "jugéis"],
-                [Ustedes, "juegen"],
+                [Tu, ["juegues"]],
+                [Usted, ["juege"]],
+                [Nosotros, ["jugemos"]],
+                [Vosotros, ["jugéis"]],
+                [Ustedes, ["juegen"]],
             ])]
         ])
     }

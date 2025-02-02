@@ -21,34 +21,34 @@ export const volcar: Irregularities = {
 
         return new Map([
             [IndicativoPresente, new Map([
-                [Yo, base + "ue" + rest + "co"],
-                [Tu, base + "ue" + rest + "cas"],
-                [Usted, base + "ue" + rest + "ca"],
-                [Ustedes, base + "ue" + rest + "can"],
+                [Yo, [base + "ue" + rest + "co"]],
+                [Tu, [base + "ue" + rest + "cas"]],
+                [Usted, [base + "ue" + rest + "ca"]],
+                [Ustedes, [base + "ue" + rest + "can"]],
             ])],
             [IndicativoIndefinido, new Map([
-                [Yo, base + "o" + rest + "qué"],
+                [Yo, [base + "o" + rest + "qué"]],
             ])],
             [SubjuntivoPresente, new Map([
-                [Yo, base + "ue" + rest + "que"],
-                [Tu, base + "ue" + rest + "ques"],
-                [Usted, base + "ue" + rest + "que"],
-                [Nosotros, base + "o" + rest + "quemos"],
-                [Vosotros, base + "o" + rest + "quéis"],
-                [Ustedes, base + "ue" + rest + "quen"],
+                [Yo, [base + "ue" + rest + "que"]],
+                [Tu, [base + "ue" + rest + "ques"]],
+                [Usted, [base + "ue" + rest + "que"]],
+                [Nosotros, [base + "o" + rest + "quemos"]],
+                [Vosotros, [base + "o" + rest + "quéis"]],
+                [Ustedes, [base + "ue" + rest + "quen"]],
             ])],
             [ImperativoAfirmativo, new Map([
-                [Tu, base + "ue" + rest + "ca"],
-                [Usted, base + "ue" + rest + "que"],
-                [Nosotros, base + "o" + rest + "quemos"],
-                [Ustedes, base + "ue" + rest + "quen"],
+                [Tu, [base + "ue" + rest + "ca"]],
+                [Usted, [base + "ue" + rest + "que"]],
+                [Nosotros, [base + "o" + rest + "quemos"]],
+                [Ustedes, [base + "ue" + rest + "quen"]],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, base + "ue" + rest + "ques"],
-                [Usted, base + "ue" + rest + "que"],
-                [Nosotros, base + "o" + rest + "quemos"],
-                [Vosotros, base + "o" + rest + "quéis"],
-                [Ustedes, base + "ue" + rest + "quen"],
+                [Tu, [base + "ue" + rest + "ques"]],
+                [Usted, [base + "ue" + rest + "que"]],
+                [Nosotros, [base + "o" + rest + "quemos"]],
+                [Vosotros, [base + "o" + rest + "quéis"]],
+                [Ustedes, [base + "ue" + rest + "quen"]],
             ])]
         ])
     }

@@ -17,34 +17,34 @@ export const almorzar: Irregularities = {
 
         return new Map([
             [IndicativoPresente, new Map([
-                [Yo, base + "uerzo"],
-                [Tu, base + "uerzas"],
-                [Usted, base + "uerza"],
-                [Ustedes, base + "uerzan"],
+                [Yo, [base + "uerzo"]],
+                [Tu, [base + "uerzas"]],
+                [Usted, [base + "uerza"]],
+                [Ustedes, [base + "uerzan"]],
             ])],
             [IndicativoIndefinido, new Map([
-                [Yo, base + "orcé"],
+                [Yo, [base + "orcé"]],
             ])],
             [SubjuntivoPresente, new Map([
-                [Yo, base + "uerce"],
-                [Tu, base + "uerces"],
-                [Usted, base + "uerce"],
-                [Nosotros, base + "uercemos"],
-                [Vosotros, base + "uercéis"],
-                [Ustedes, base + "uercen"],
+                [Yo, [base + "uerce"]],
+                [Tu, [base + "uerces"]],
+                [Usted, [base + "uerce"]],
+                [Nosotros, [base + "uercemos"]],
+                [Vosotros, [base + "uercéis"]],
+                [Ustedes, [base + "uercen"]],
             ])],
             [ImperativoAfirmativo, new Map([
-                [Tu, base + "uerza"],
-                [Usted, base + "uerce"],
-                [Nosotros, base + "uercemos"],
-                [Ustedes, base + "uercen"],
+                [Tu, [base + "uerza"]],
+                [Usted, [base + "uerce"]],
+                [Nosotros, [base + "uercemos"]],
+                [Ustedes, [base + "uercen"]],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, base + "uerces"],
-                [Usted, base + "uerce"],
-                [Nosotros, base + "uercemos"],
-                [Vosotros, base + "uercéis"],
-                [Ustedes, base + "uercen"]
+                [Tu, [base + "uerces"]],
+                [Usted, [base + "uerce"]],
+                [Nosotros, [base + "uercemos"]],
+                [Vosotros, [base + "uercéis"]],
+                [Ustedes, [base + "uercen"]]
             ])]
         ])
     }

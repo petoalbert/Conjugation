@@ -16,27 +16,27 @@ export const conocer: Irregularities = {
 
         return new Map([
             [IndicativoPresente, new Map([
-                [Yo, base + "zco"],
+                [Yo, [base + "zco"]],
             ])],
             [SubjuntivoPresente, new Map([
-                [Yo, base + "zca"],
-                [Tu, base + "zcas"],
-                [Usted, base + "zca"],
-                [Nosotros, base + "zcamos"],
-                [Vosotros, base + "zcáis"],
-                [Ustedes, base + "zcan"],
+                [Yo, [base + "zca"]],
+                [Tu, [base + "zcas"]],
+                [Usted, [base + "zca"]],
+                [Nosotros, [base + "zcamos"]],
+                [Vosotros, [base + "zcáis"]],
+                [Ustedes, [base + "zcan"]],
             ])],
             [ImperativoAfirmativo, new Map([
-                [Usted, base + "zca"],
-                [Nosotros, base + "zcamos"],
-                [Ustedes, base + "zcan"],
+                [Usted, [base + "zca"]],
+                [Nosotros, [base + "zcamos"]],
+                [Ustedes, [base + "zcan"]],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, base + "zcas"],
-                [Usted, base + "zca"],
-                [Nosotros, base + "zcamos"],
-                [Vosotros, base + "zcáis"],
-                [Ustedes, base + "zcan"]
+                [Tu, [base + "zcas"]],
+                [Usted, [base + "zca"]],
+                [Nosotros, [base + "zcamos"]],
+                [Vosotros, [base + "zcáis"]],
+                [Ustedes, [base + "zcan"]]
             ])]
         ])
     }

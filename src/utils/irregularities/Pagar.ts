@@ -19,27 +19,27 @@ export const pagar: Irregularities = {
 
         return new Map([
             [IndicativoIndefinido, new Map([
-                [Yo, base + "gué"]
+                [Yo, [base + "gué"]]
             ])],
             [SubjuntivoPresente, new Map([
-                [Yo, base + "gue"],
-                [Tu, base + "gues"],
-                [Usted, base + "gue"],
-                [Nosotros, base + "guemos"],
-                [Vosotros, base + "guéis"],
-                [Ustedes, base + "guen"],
+                [Yo, [base + "gue"]],
+                [Tu, [base + "gues"]],
+                [Usted, [base + "gue"]],
+                [Nosotros, [base + "guemos"]],
+                [Vosotros, [base + "guéis"]],
+                [Ustedes, [base + "guen"]],
             ])],
             [ImperativoAfirmativo, new Map([
-                [Usted, base + "gue"],
-                [Nosotros, base + "guemos"],
-                [Ustedes, base + "guen"],
+                [Usted, [base + "gue"]],
+                [Nosotros, [base + "guemos"]],
+                [Ustedes, [base + "guen"]],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, base + "gues"],
-                [Usted, base + "gue"],
-                [Nosotros, base + "guemos"],
-                [Vosotros, base + "guéis"],
-                [Ustedes, base + "guen"],
+                [Tu, [base + "gues"]],
+                [Usted, [base + "gue"]],
+                [Nosotros, [base + "guemos"]],
+                [Vosotros, [base + "guéis"]],
+                [Ustedes, [base + "guen"]],
             ])]
         ])
     }

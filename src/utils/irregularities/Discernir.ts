@@ -23,26 +23,26 @@ export const discernir: Irregularities = {
 
         return new Map([
             [IndicativoPresente, new Map([
-                [Yo, base + "ie" + rest + "o"],
-                [Tu, base + "ie" + rest + "es"],
-                [Usted, base + "ie" + rest + "e"],
-                [Ustedes, base + "ie" + rest + "en"],
+                [Yo, [base + "ie" + rest + "o"]],
+                [Tu, [base + "ie" + rest + "es"]],
+                [Usted, [base + "ie" + rest + "e"]],
+                [Ustedes, [base + "ie" + rest + "en"]],
             ])],
             [SubjuntivoPresente, new Map([
-                [Yo, base + "ie" + rest + "a"],
-                [Tu, base + "ie" + rest + "as"],
-                [Usted, base + "ie" + rest + "a"],
-                [Ustedes, base + "ie" + rest + "an"],
+                [Yo, [base + "ie" + rest + "a"]],
+                [Tu, [base + "ie" + rest + "as"]],
+                [Usted, [base + "ie" + rest + "a"]],
+                [Ustedes, [base + "ie" + rest + "an"]],
             ])],
             [ImperativoAfirmativo, new Map([
-                [Tu, base + "ie" + rest + "e"],
-                [Usted, base + "ie" + rest + "a"],
-                [Ustedes, base + "ie" + rest + "an"],
+                [Tu, [base + "ie" + rest + "e"]],
+                [Usted, [base + "ie" + rest + "a"]],
+                [Ustedes, [base + "ie" + rest + "an"]],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, base + "ie" + rest + "as"],
-                [Usted, base + "ie" + rest + "a"],
-                [Ustedes, base + "ie" + rest + "an"]
+                [Tu, [base + "ie" + rest + "as"]],
+                [Usted, [base + "ie" + rest + "a"]],
+                [Ustedes, [base + "ie" + rest + "an"]]
             ])]
         ])
     }

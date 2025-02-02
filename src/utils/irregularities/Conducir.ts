@@ -8,7 +8,8 @@ const {
     IndicativoIndefinido,
     SubjuntivoPresente,
     ImperativoAfirmativo,
-    ImperativoNegativo
+    ImperativoNegativo,
+    SubjuntivoImperfecto
 } = Tense
 
 export const conducir: Irregularities = {
@@ -17,35 +18,43 @@ export const conducir: Irregularities = {
 
         return new Map([
             [IndicativoPresente, new Map([
-                [Yo, base + "zco"],
+                [Yo, [base + "zco"]],
             ])],
             [IndicativoIndefinido, new Map([
-                [Yo, base + "je"],
-                [Tu, base + "jiste"],
-                [Usted, base + "jo"],
-                [Nosotros, base + "jimos"],
-                [Vosotros, base + "jisteis"],
-                [Ustedes, base + "jeron"],
+                [Yo, [base + "je"]],
+                [Tu, [base + "jiste"]],
+                [Usted, [base + "jo"]],
+                [Nosotros, [base + "jimos"]],
+                [Vosotros, [base + "jisteis"]],
+                [Ustedes, [base + "jeron"]],
             ])],
             [SubjuntivoPresente, new Map([
-                [Yo, base + "zca"],
-                [Tu, base + "zcas"],
-                [Usted, base + "zca"],
-                [Nosotros, base + "zcamos"],
-                [Vosotros, base + "zcáis"],
-                [Ustedes, base + "zcan"],
+                [Yo, [base + "zca"]],
+                [Tu, [base + "zcas"]],
+                [Usted, [base + "zca"]],
+                [Nosotros, [base + "zcamos"]],
+                [Vosotros, [base + "zcáis"]],
+                [Ustedes, [base + "zcan"]],
             ])],
             [ImperativoAfirmativo, new Map([
-                [Usted, base + "zca"],
-                [Nosotros, base + "zcamos"],
-                [Ustedes, base + "zcan"],
+                [Usted, [base + "zca"]],
+                [Nosotros, [base + "zcamos"]],
+                [Ustedes, [base + "zcan"]],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, base + "zcas"],
-                [Usted, base + "zca"],
-                [Nosotros, base + "zcamos"],
-                [Vosotros, base + "zcáis"],
-                [Ustedes, base + "zcan"]
+                [Tu, [base + "zcas"]],
+                [Usted, [base + "zca"]],
+                [Nosotros, [base + "zcamos"]],
+                [Vosotros, [base + "zcáis"]],
+                [Ustedes, [base + "zcan"]]
+            ])],
+            [SubjuntivoImperfecto, new Map([
+                [Yo, [base + "jera", base + "jese"]],
+                [Tu, [base + "jeras", base + "jeses"]],
+                [Usted, [base + "jera", base + "jese"]],
+                [Nosotros, [base + "jéramos", base + "jésemos"]],
+                [Vosotros, [base + "jerais", base + "jeséis"]],
+                [Ustedes, [base + "jeran", base + "jesen"]]
             ])]
         ])
     }

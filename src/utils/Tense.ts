@@ -6,7 +6,8 @@ export enum Tense {
     IndicativoCondicional,
     SubjuntivoPresente,
     ImperativoAfirmativo,
-    ImperativoNegativo
+    ImperativoNegativo,
+    SubjuntivoImperfecto
 }
 
 export function tenseToString(tense: Tense): string {
@@ -19,5 +20,6 @@ export function tenseToString(tense: Tense): string {
         case Tense.SubjuntivoPresente: return "subjuntivo presente"
         case Tense.ImperativoAfirmativo: return "imperativo afirmativo"
         case Tense.ImperativoNegativo: return "imperativo negativo"
+        case Tense.SubjuntivoImperfecto: return "subjuntivo imperfecto"
     }
 }

@@ -10,57 +10,64 @@ const {
     ImperativoNegativo,
     IndicativoIndefinido,
     IndicativoImperfecto,
-    IndicativoFuturoImperfecto,
-    IndicativoCondicional
+    SubjuntivoImperfecto
 } = Tense
 
 export const ir: Irregularities = {
     forms: function (string) {
         return new Map([
             [IndicativoPresente, new Map([
-                [Yo, "voy"],
-                [Tu, "vas"],
-                [Usted, "va"],
-                [Nosotros, "vamos"],
-                [Vosotros, "vais"],
-                [Ustedes, "van"],
+                [Yo, ["voy"]],
+                [Tu, ["vas"]],
+                [Usted, ["va"]],
+                [Nosotros, ["vamos"]],
+                [Vosotros, ["vais"]],
+                [Ustedes, ["van"]],
             ])],
             [IndicativoImperfecto, new Map([
-                [Yo, "iba"],
-                [Tu, "ibas"],
-                [Usted, "iba"],
-                [Nosotros, "ibamos"],
-                [Vosotros, "ibais"],
-                [Ustedes, "iban"],
+                [Yo, ["iba"]],
+                [Tu, ["ibas"]],
+                [Usted, ["iba"]],
+                [Nosotros, ["ibamos"]],
+                [Vosotros, ["ibais"]],
+                [Ustedes, ["iban"]],
             ])],
             [IndicativoIndefinido, new Map([
-                [Yo, "fui"],
-                [Tu, "fuiste"],
-                [Usted, "fue"],
-                [Nosotros, "fuimos"],
-                [Vosotros, "fuisteis"],
-                [Ustedes, "fueron"],
+                [Yo, ["fui"]],
+                [Tu, ["fuiste"]],
+                [Usted, ["fue"]],
+                [Nosotros, ["fuimos"]],
+                [Vosotros, ["fuisteis"]],
+                [Ustedes, ["fueron"]],
             ])],
             [SubjuntivoPresente, new Map([
-                [Yo, "vaya"],
-                [Tu, "vayas"],
-                [Usted, "vaya"],
-                [Nosotros, "vayamos"],
-                [Vosotros, "vayáis"],
-                [Ustedes, "vayan"],
+                [Yo, ["vaya"]],
+                [Tu, ["vayas"]],
+                [Usted, ["vaya"]],
+                [Nosotros, ["vayamos"]],
+                [Vosotros, ["vayáis"]],
+                [Ustedes, ["vayan"]],
             ])],
             [ImperativoAfirmativo, new Map([
-                [Tu, "ve"],
-                [Usted, "vaya"],
-                [Nosotros, "vayamos"],
-                [Ustedes, "vayan"],
+                [Tu, ["ve"]],
+                [Usted, ["vaya"]],
+                [Nosotros, ["vayamos"]],
+                [Ustedes, ["vayan"]],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, "vayas"],
-                [Usted, "vaya"],
-                [Nosotros, "vayamos"],
-                [Vosotros, "vayáis"],
-                [Ustedes, "vayan"]
+                [Tu, ["vayas"]],
+                [Usted, ["vaya"]],
+                [Nosotros, ["vayamos"]],
+                [Vosotros, ["vayáis"]],
+                [Ustedes, ["vayan"]]
+            ])],
+            [SubjuntivoImperfecto, new Map([
+                [Yo, ["fuera", "fuese"]],
+                [Tu, ["fueras", "fueses"]],
+                [Usted, ["fuera", "fuese"]],
+                [Nosotros, ["fuéramos", "fuésemos"]],
+                [Vosotros, ["fuerais", "fueseis"]],
+                [Ustedes, ["fueran", "fuesen"]]
             ])]
         ])
     }

@@ -16,26 +16,26 @@ export const actuar: Irregularities = {
 
         return new Map([
             [IndicativoPresente, new Map([
-                [Yo, base + "úo"],
-                [Tu, base + "úas"],
-                [Usted, base + "úa"],
-                [Ustedes, base + "úan"],
+                [Yo, [base + "úo"]],
+                [Tu, [base + "úas"]],
+                [Usted, [base + "úa"]],
+                [Ustedes, [base + "úan"]],
             ])],
             [SubjuntivoPresente, new Map([
-                [Yo, base + "úe"],
-                [Tu, base + "úes"],
-                [Usted, base + "úe"],
-                [Ustedes, base + "úen"],
+                [Yo, [base + "úe"]],
+                [Tu, [base + "úes"]],
+                [Usted, [base + "úe"]],
+                [Ustedes, [base + "úen"]],
             ])],
             [ImperativoAfirmativo, new Map([
-                [Tu, base + "úa"],
-                [Usted, base + "úe"],
-                [Ustedes, base + "úen"]
+                [Tu, [base + "úa"]],
+                [Usted, [base + "úe"]],
+                [Ustedes, [base + "úen"]]
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, base + "úes"],
-                [Usted, base + "úe"],
-                [Ustedes, base + "úen"]
+                [Tu, [base + "úes"]],
+                [Usted, [base + "úe"]],
+                [Ustedes, [base + "úen"]]
             ])]
         ])
     }

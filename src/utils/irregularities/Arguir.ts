@@ -8,7 +8,8 @@ const {
     IndicativoIndefinido,
     SubjuntivoPresente,
     ImperativoAfirmativo,
-    ImperativoNegativo
+    ImperativoNegativo,
+    SubjuntivoImperfecto
 } = Tense
 
 export const arguir: Irregularities = {
@@ -17,35 +18,43 @@ export const arguir: Irregularities = {
 
         return new Map([
             [IndicativoPresente, new Map([
-                [Yo, base + "uyo"],
-                [Tu, base + "uyes"],
-                [Usted, base + "uye"],
-                [Ustedes, base + "uyen"],
+                [Yo, [base + "uyo"]],
+                [Tu, [base + "uyes"]],
+                [Usted, [base + "uye"]],
+                [Ustedes, [base + "uyen"]],
             ])],
             [IndicativoIndefinido, new Map([
-                [Usted, base + "uyó"],
-                [Ustedes, base + "uyeron"],
+                [Usted, [base + "uyó"]],
+                [Ustedes, [base + "uyeron"]],
             ])],
             [SubjuntivoPresente, new Map([
-                [Yo, base + "uya"],
-                [Tu, base + "uyas"],
-                [Usted, base + "uya"],
-                [Nosotros, base + "uyamos"],
-                [Vosotros, base + "uyáis"],
-                [Ustedes, base + "uyan"],
+                [Yo, [base + "uya"]],
+                [Tu, [base + "uyas"]],
+                [Usted, [base + "uya"]],
+                [Nosotros, [base + "uyamos"]],
+                [Vosotros, [base + "uyáis"]],
+                [Ustedes, [base + "uyan"]],
             ])],
             [ImperativoAfirmativo, new Map([
-                [Tu, base + "uye"],
-                [Usted, base + "uya"],
-                [Nosotros, base + "uyamos"],
-                [Ustedes, base + "uyan"],
+                [Tu, [base + "uye"]],
+                [Usted, [base + "uya"]],
+                [Nosotros, [base + "uyamos"]],
+                [Ustedes, [base + "uyan"]],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, base + "uyas"],
-                [Usted, base + "uya"],
-                [Nosotros, base + "uyamos"],
-                [Vosotros, base + "uyáis"],
-                [Ustedes, base + "uyan"]
+                [Tu, [base + "uyas"]],
+                [Usted, [base + "uya"]],
+                [Nosotros, [base + "uyamos"]],
+                [Vosotros, [base + "uyáis"]],
+                [Ustedes, [base + "uyan"]]
+            ])],
+            [SubjuntivoImperfecto, new Map([
+                [Yo, [base + "uyera", base + "uyese"]],
+                [Tu, [base + "uyeras", base + "uyeses"]],
+                [Usted, [base + "uyera", base + "uyese"]],
+                [Nosotros, [base + "uyéramos", base + "uyésemos"]],
+                [Vosotros, [base + "uyerais", base + "uyeseis"]],
+                [Ustedes, [base + "uyeran", base + "uyesen"]]
             ])]
         ])
     }

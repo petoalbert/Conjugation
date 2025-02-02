@@ -16,26 +16,26 @@ export const confiar: Irregularities = {
 
         return new Map([
             [IndicativoPresente, new Map([
-                [Yo, base + "ío"],
-                [Tu, base + "ías"],
-                [Usted, base + "ía"],
-                [Ustedes, base + "ían"],
+                [Yo, [base + "ío"]],
+                [Tu, [base + "ías"]],
+                [Usted, [base + "ía"]],
+                [Ustedes, [base + "ían"]],
             ])],
             [SubjuntivoPresente, new Map([
-                [Yo, base + "íe"],
-                [Tu, base + "íes"],
-                [Usted, base + "íe"],
-                [Ustedes, base + "íen"],
+                [Yo, [base + "íe"]],
+                [Tu, [base + "íes"]],
+                [Usted, [base + "íe"]],
+                [Ustedes, [base + "íen"]],
             ])],
             [ImperativoAfirmativo, new Map([
-                [Tu, base + "ía"],
-                [Usted, base + "íe"],
-                [Ustedes, base + "íen"],
+                [Tu, [base + "ía"]],
+                [Usted, [base + "íe"]],
+                [Ustedes, [base + "íen"]],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, base + "íes"],
-                [Usted, base + "íe"],
-                [Ustedes, base + "íen"]
+                [Tu, [base + "íes"]],
+                [Usted, [base + "íe"]],
+                [Ustedes, [base + "íen"]]
             ])]
         ])
     }

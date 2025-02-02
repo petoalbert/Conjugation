@@ -16,27 +16,27 @@ export const adquirir: Irregularities = {
 
         return new Map([
             [IndicativoPresente, new Map([
-                [Yo, base + "quiero"],
-                [Tu, base + "quieres"],
-                [Usted, base + "quiere"],
-                [Ustedes, base + "quieren"],
+                [Yo, [base + "quiero"]],
+                [Tu, [base + "quieres"]],
+                [Usted, [base + "quiere"]],
+                [Ustedes, [base + "quieren"]],
 
             ])],
             [SubjuntivoPresente, new Map([
-                [Yo, base + "quiera"],
-                [Tu, base + "quieras"],
-                [Usted, base + "quiera"],
-                [Ustedes, base + "quieran"],
+                [Yo, [base + "quiera"]],
+                [Tu, [base + "quieras"]],
+                [Usted, [base + "quiera"]],
+                [Ustedes, [base + "quieran"]],
             ])],
             [ImperativoAfirmativo, new Map([
-                [Tu, base + "quiere"],
-                [Usted, base + "quiera"],
-                [Ustedes, base + "quieran"],
+                [Tu, [base + "quiere"]],
+                [Usted, [base + "quiera"]],
+                [Ustedes, [base + "quieran"]],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, base + "quieras"],
-                [Usted, base + "quiera"],
-                [Ustedes, base + "quieran"]
+                [Tu, [base + "quieras"]],
+                [Usted, [base + "quiera"]],
+                [Ustedes, [base + "quieran"]]
             ])]
         ])
     }

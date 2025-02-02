@@ -16,27 +16,27 @@ export const averiguar: Irregularities = {
 
         return new Map([
             [IndicativoIndefinido, new Map([
-                [Yo, (base + "güé")],
+                [Yo, [(base + "güé")]],
             ])],
             [SubjuntivoPresente, new Map([
-                [Yo, base + "güe"],
-                [Tu, base + "gües"],
-                [Usted, base + "güe"],
-                [Nosotros, base + "güemos"],
-                [Vosotros, base + "güéis"],
-                [Ustedes, base + "güen"],
+                [Yo, [base + "güe"]],
+                [Tu, [base + "gües"]],
+                [Usted, [base + "güe"]],
+                [Nosotros, [base + "güemos"]],
+                [Vosotros, [base + "güéis"]],
+                [Ustedes, [base + "güen"]],
             ])],
             [ImperativoAfirmativo, new Map([
-                [Usted, base + "güe"],
-                [Nosotros, base + "güemos"],
-                [Ustedes, base + "güen"],
+                [Usted, [base + "güe"]],
+                [Nosotros, [base + "güemos"]],
+                [Ustedes, [base + "güen"]],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, base + "gües"],
-                [Usted, base + "güe"],
-                [Nosotros, base + "güemos"],
-                [Vosotros, base + "güéis"],
-                [Ustedes, base + "güen"]
+                [Tu, [base + "gües"]],
+                [Usted, [base + "güe"]],
+                [Nosotros, [base + "güemos"]],
+                [Vosotros, [base + "güéis"]],
+                [Ustedes, [base + "güen"]]
             ])]
         ])
     }

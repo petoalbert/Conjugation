@@ -21,31 +21,31 @@ export const torcer: Irregularities = {
 
         return new Map([
             [IndicativoPresente, new Map([
-                [Yo, base + "ue" + rest + "zo"],
-                [Tu, base + "ue" + rest + "ces"],
-                [Usted, base + "ue" + rest + "ce"],
-                [Ustedes, base + "ue" + rest + "cen"],
+                [Yo, [base + "ue" + rest + "zo"]],
+                [Tu, [base + "ue" + rest + "ces"]],
+                [Usted, [base + "ue" + rest + "ce"]],
+                [Ustedes, [base + "ue" + rest + "cen"]],
             ])],
             [SubjuntivoPresente, new Map([
-                [Yo, base + "ue" + rest + "za"],
-                [Tu, base + "ue" + rest + "zas"],
-                [Usted, base + "ue" + rest + "za"],
-                [Nosotros, base + "o" + rest + "zamos"],
-                [Vosotros, base + "o" + rest + "záis"],
-                [Ustedes, base + "ue" + rest + "zan"],
+                [Yo, [base + "ue" + rest + "za"]],
+                [Tu, [base + "ue" + rest + "zas"]],
+                [Usted, [base + "ue" + rest + "za"]],
+                [Nosotros, [base + "o" + rest + "zamos"]],
+                [Vosotros, [base + "o" + rest + "záis"]],
+                [Ustedes, [base + "ue" + rest + "zan"]],
             ])],
             [ImperativoAfirmativo, new Map([
-                [Tu, base + "ue" + rest + "ce"],
-                [Usted, base + "ue" + rest + "za"],
-                [Nosotros, base + "o" + rest + "zamos"],
-                [Ustedes, base + "ue" + rest + "zan"],
+                [Tu, [base + "ue" + rest + "ce"]],
+                [Usted, [base + "ue" + rest + "za"]],
+                [Nosotros, [base + "o" + rest + "zamos"]],
+                [Ustedes, [base + "ue" + rest + "zan"]],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, base + "ue" + rest + "zas"],
-                [Usted, base + "ue" + rest + "za"],
-                [Nosotros, base + "o" + rest + "zamos"],
-                [Vosotros, base + "o" + rest + "záis"],
-                [Ustedes, base + "ue" + rest + "zan"],
+                [Tu, [base + "ue" + rest + "zas"]],
+                [Usted, [base + "ue" + rest + "za"]],
+                [Nosotros, [base + "o" + rest + "zamos"]],
+                [Vosotros, [base + "o" + rest + "záis"]],
+                [Ustedes, [base + "ue" + rest + "zan"]],
             ])]
         ])
     }

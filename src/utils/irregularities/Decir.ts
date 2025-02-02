@@ -10,7 +10,8 @@ const {
     ImperativoNegativo,
     IndicativoIndefinido,
     IndicativoFuturoImperfecto,
-    IndicativoCondicional
+    IndicativoCondicional,
+    SubjuntivoImperfecto
 } = Tense
 
 export const decir: Irregularities = {
@@ -19,55 +20,63 @@ export const decir: Irregularities = {
 
         return new Map([
             [IndicativoPresente, new Map([
-                [Yo, base + "digo"],
-                [Tu, base + "dices"],
-                [Usted, base + "dice"],
-                [Ustedes, base + "dicen"],
+                [Yo, [base + "digo"]],
+                [Tu, [base + "dices"]],
+                [Usted, [base + "dice"]],
+                [Ustedes, [base + "dicen"]],
             ])],
             [IndicativoIndefinido, new Map([
-                [Yo, base + "dije"],
-                [Tu, base + "dijiste"],
-                [Usted, base + "dijo"],
-                [Nosotros, base + "dijimos"],
-                [Vosotros, base + "dijisteis"],
-                [Ustedes, base + "dijeron"],
+                [Yo, [base + "dije"]],
+                [Tu, [base + "dijiste"]],
+                [Usted, [base + "dijo"]],
+                [Nosotros, [base + "dijimos"]],
+                [Vosotros, [base + "dijisteis"]],
+                [Ustedes, [base + "dijeron"]],
             ])],
             [IndicativoFuturoImperfecto, new Map([
-                [Yo, base + "diré"],
-                [Tu, base + "dirás"],
-                [Usted, base + "dirá"],
-                [Nosotros, base + "dirémos"],
-                [Vosotros, base + "diréis"],
-                [Ustedes, base + "dirán"],
+                [Yo, [base + "diré"]],
+                [Tu, [base + "dirás"]],
+                [Usted, [base + "dirá"]],
+                [Nosotros, [base + "dirémos"]],
+                [Vosotros, [base + "diréis"]],
+                [Ustedes, [base + "dirán"]],
             ])],
             [IndicativoCondicional, new Map([
-                [Yo, base + "diría"],
-                [Tu, base + "dirías"],
-                [Usted, base + "diría"],
-                [Nosotros, base + "diríamos"],
-                [Vosotros, base + "diríais"],
-                [Ustedes, base + "dirían"],
+                [Yo, [base + "diría"]],
+                [Tu, [base + "dirías"]],
+                [Usted, [base + "diría"]],
+                [Nosotros, [base + "diríamos"]],
+                [Vosotros, [base + "diríais"]],
+                [Ustedes, [base + "dirían"]],
             ])],
             [SubjuntivoPresente, new Map([
-                [Yo, base + "diga"],
-                [Tu, base + "digas"],
-                [Usted, base + "diga"],
-                [Nosotros, base + "digamos"],
-                [Vosotros, base + "digáis"],
-                [Ustedes, base + "digan"],
+                [Yo, [base + "diga"]],
+                [Tu, [base + "digas"]],
+                [Usted, [base + "diga"]],
+                [Nosotros, [base + "digamos"]],
+                [Vosotros, [base + "digáis"]],
+                [Ustedes, [base + "digan"]],
             ])],
             [ImperativoAfirmativo, new Map([
-                [Tu, base + "di"],
-                [Usted, base + "diga"],
-                [Nosotros, base + "digamos"],
-                [Ustedes, base + "digan"],
+                [Tu, [base + "di"]],
+                [Usted, [base + "diga"]],
+                [Nosotros, [base + "digamos"]],
+                [Ustedes, [base + "digan"]],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, base + "digas"],
-                [Usted, base + "diga"],
-                [Nosotros, base + "digamos"],
-                [Vosotros, base + "digáis"],
-                [Ustedes, base + "digan"]
+                [Tu, [base + "digas"]],
+                [Usted, [base + "diga"]],
+                [Nosotros, [base + "digamos"]],
+                [Vosotros, [base + "digáis"]],
+                [Ustedes, [base + "digan"]]
+            ])],
+            [SubjuntivoImperfecto, new Map([
+                [Yo, [base + "dijera", base + "dijese"]],
+                [Tu, [base + "dijeras", base + "dijeses"]],
+                [Usted, [base + "dijera", base + "dijese"]],
+                [Nosotros, [base + "dijéramos", base + "dijésemos"]],
+                [Vosotros, [base + "dijerais", base + "dijeseis"]],
+                [Ustedes, [base + "dijeran", base + "dijesen"]]
             ])]
         ])
     }

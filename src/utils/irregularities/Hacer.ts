@@ -10,59 +10,68 @@ const {
     ImperativoNegativo,
     IndicativoIndefinido,
     IndicativoFuturoImperfecto,
-    IndicativoCondicional
+    IndicativoCondicional,
+    SubjuntivoImperfecto
 } = Tense
 
 export const hacer: Irregularities = {
     forms: function (string) {
         return new Map([
             [IndicativoPresente, new Map([
-                [Yo, "hago"],
+                [Yo, ["hago"]],
             ])],
             [IndicativoIndefinido, new Map([
-                [Yo, "hice"],
-                [Tu, "hiciste"],
-                [Usted, "hizo"],
-                [Nosotros, "hicimos"],
-                [Vosotros, "hicisteis"],
-                [Ustedes, "hicieron"],
+                [Yo, ["hice"]],
+                [Tu, ["hiciste"]],
+                [Usted, ["hizo"]],
+                [Nosotros, ["hicimos"]],
+                [Vosotros, ["hicisteis"]],
+                [Ustedes, ["hicieron"]],
             ])],
             [IndicativoFuturoImperfecto, new Map([
-                [Yo, "haré"],
-                [Tu, "harás"],
-                [Usted, "hará"],
-                [Nosotros, "harémos"],
-                [Vosotros, "haréis"],
-                [Ustedes, "harán"],
+                [Yo, ["haré"]],
+                [Tu, ["harás"]],
+                [Usted, ["hará"]],
+                [Nosotros, ["harémos"]],
+                [Vosotros, ["haréis"]],
+                [Ustedes, ["harán"]],
             ])],
             [IndicativoCondicional, new Map([
-                [Yo, "haría"],
-                [Tu, "harías"],
-                [Usted, "haría"],
-                [Nosotros, "haríamos"],
-                [Vosotros, "haríais"],
-                [Ustedes, "harían"],
+                [Yo, ["haría"]],
+                [Tu, ["harías"]],
+                [Usted, ["haría"]],
+                [Nosotros, ["haríamos"]],
+                [Vosotros, ["haríais"]],
+                [Ustedes, ["harían"]],
             ])],
             [SubjuntivoPresente, new Map([
-                [Yo, "haga"],
-                [Tu, "hagas"],
-                [Usted, "haga"],
-                [Nosotros, "hagamos"],
-                [Vosotros, "hagáis"],
-                [Ustedes, "hagan"],
+                [Yo, ["haga"]],
+                [Tu, ["hagas"]],
+                [Usted, ["haga"]],
+                [Nosotros, ["hagamos"]],
+                [Vosotros, ["hagáis"]],
+                [Ustedes, ["hagan"]],
             ])],
             [ImperativoAfirmativo, new Map([
-                [Tu, "haz"],
-                [Usted, "haga"],
-                [Nosotros, "hagamos"],
-                [Ustedes, "hagan"],
+                [Tu, ["haz"]],
+                [Usted, ["haga"]],
+                [Nosotros, ["hagamos"]],
+                [Ustedes, ["hagan"]],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, "hagas"],
-                [Usted, "haga"],
-                [Nosotros, "hagamos"],
-                [Vosotros, "hagáis"],
-                [Ustedes, "hagan"],
+                [Tu, ["hagas"]],
+                [Usted, ["haga"]],
+                [Nosotros, ["hagamos"]],
+                [Vosotros, ["hagáis"]],
+                [Ustedes, ["hagan"]],
+            ])],
+            [SubjuntivoImperfecto, new Map([
+                [Yo, ["hiciera", "hiciese"]],
+                [Tu, ["hicieras", "hicieses"]],
+                [Usted, ["hiciera", "hiciese"]],
+                [Nosotros, ["hiciéramos", "hiciésemos"]],
+                [Vosotros, ["hicierais", "hicieseis"]],
+                [Ustedes, ["hicieran", "hiciesen"]]
             ])]
         ])
     }

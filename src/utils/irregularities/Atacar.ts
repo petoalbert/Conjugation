@@ -16,27 +16,27 @@ export const atacar: Irregularities = {
 
         return new Map([
             [IndicativoIndefinido, new Map([
-                [Yo, base + "qué"],
+                [Yo, [base + "qué"]],
             ])],
             [SubjuntivoPresente, new Map([
-                [Yo, base + "que"],
-                [Tu, base + "ques"],
-                [Usted, base + "que"],
-                [Nosotros, base + "quemos"],
-                [Vosotros, base + "quéis"],
-                [Ustedes, base + "quen"],
+                [Yo, [base + "que"]],
+                [Tu, [base + "ques"]],
+                [Usted, [base + "que"]],
+                [Nosotros, [base + "quemos"]],
+                [Vosotros, [base + "quéis"]],
+                [Ustedes, [base + "quen"]],
             ])],
             [ImperativoAfirmativo, new Map([
-                [Usted, base + "que"],
-                [Nosotros, base + "quemos"],
-                [Ustedes, base + "quen"],
+                [Usted, [base + "que"]],
+                [Nosotros, [base + "quemos"]],
+                [Ustedes, [base + "quen"]],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, base + "ques"],
-                [Usted, base + "que"],
-                [Nosotros, base + "quemos"],
-                [Vosotros, base + "quéis"],
-                [Ustedes, base + "quen"]
+                [Tu, [base + "ques"]],
+                [Usted, [base + "que"]],
+                [Nosotros, [base + "quemos"]],
+                [Vosotros, [base + "quéis"]],
+                [Ustedes, [base + "quen"]]
             ])]
         ])
     }

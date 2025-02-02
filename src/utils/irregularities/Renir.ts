@@ -9,8 +9,7 @@ const {
     ImperativoAfirmativo,
     ImperativoNegativo,
     IndicativoIndefinido,
-    IndicativoFuturoImperfecto,
-    IndicativoCondicional
+    SubjuntivoImperfecto
 } = Tense
 
 export const renir: Irregularities = {
@@ -19,35 +18,43 @@ export const renir: Irregularities = {
 
         return new Map([
             [IndicativoPresente, new Map([
-                [Yo, base + "riño"],
-                [Tu, base + "riñes"],
-                [Usted, base + "riñe"],
-                [Ustedes, base + "riñen"],
+                [Yo, [base + "riño"]],
+                [Tu, [base + "riñes"]],
+                [Usted, [base + "riñe"]],
+                [Ustedes, [base + "riñen"]],
             ])],
             [IndicativoIndefinido, new Map([
-                [Usted, base + "riñó"],
-                [Ustedes, base + "riñeron"],
+                [Usted, [base + "riñó"]],
+                [Ustedes, [base + "riñeron"]],
             ])],
             [SubjuntivoPresente, new Map([
-                [Yo, base + "riña"],
-                [Tu, base + "riñas"],
-                [Usted, base + "riña"],
-                [Nosotros, base + "riñamos"],
-                [Vosotros, base + "riñáis"],
-                [Ustedes, base + "riñan"],
+                [Yo, [base + "riña"]],
+                [Tu, [base + "riñas"]],
+                [Usted, [base + "riña"]],
+                [Nosotros, [base + "riñamos"]],
+                [Vosotros, [base + "riñáis"]],
+                [Ustedes, [base + "riñan"]],
             ])],
             [ImperativoAfirmativo, new Map([
-                [Tu, base + "riñe"],
-                [Usted, base + "riña"],
-                [Nosotros, base + "riñamos"],
-                [Ustedes, base + "riñan"],
+                [Tu, [base + "riñe"]],
+                [Usted, [base + "riña"]],
+                [Nosotros, [base + "riñamos"]],
+                [Ustedes, [base + "riñan"]],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, base + "riñas"],
-                [Usted, base + "riña"],
-                [Nosotros, base + "riñamos"],
-                [Vosotros, base + "riñáis"],
-                [Ustedes, base + "riñan"],
+                [Tu, [base + "riñas"]],
+                [Usted, [base + "riña"]],
+                [Nosotros, [base + "riñamos"]],
+                [Vosotros, [base + "riñáis"]],
+                [Ustedes, [base + "riñan"]],
+            ])],
+            [SubjuntivoImperfecto, new Map([
+                [Yo, [base + "riñera", base + "riñese"]],
+                [Tu, [base + "riñeras", base + "riñeses"]],
+                [Usted, [base + "riñera", base + "riñese"]],
+                [Nosotros, [base + "riñéramos", base + "riñésemos"]],
+                [Vosotros, [base + "riñerais", base + "riñeseis"]],
+                [Ustedes, [base + "riñeran", base + "riñesen"]],
             ])]
         ])
     }

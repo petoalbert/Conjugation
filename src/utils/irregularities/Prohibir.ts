@@ -19,26 +19,26 @@ export const prohibir: Irregularities = {
 
         return new Map([
             [IndicativoPresente, new Map([
-                [Yo, base + "híbo"],
-                [Tu, base + "híbes"],
-                [Usted, base + "híbe"],
-                [Ustedes, base + "híben"],
+                [Yo, [base + "híbo"]],
+                [Tu, [base + "híbes"]],
+                [Usted, [base + "híbe"]],
+                [Ustedes, [base + "híben"]],
             ])],
             [SubjuntivoPresente, new Map([
-                [Yo, base + "híba"],
-                [Tu, base + "híbas"],
-                [Usted, base + "híba"],
-                [Ustedes, base + "híban"],
+                [Yo, [base + "híba"]],
+                [Tu, [base + "híbas"]],
+                [Usted, [base + "híba"]],
+                [Ustedes, [base + "híban"]],
             ])],
             [SubjuntivoPresente, new Map([
-                [Tu, base + "híbe"],
-                [Usted, base + "híba"],
-                [Ustedes, base + "híban"],
+                [Tu, [base + "híbe"]],
+                [Usted, [base + "híba"]],
+                [Ustedes, [base + "híban"]],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, base + "híbas"],
-                [Usted, base + "híba"],
-                [Ustedes, base + "híban"],
+                [Tu, [base + "híbas"]],
+                [Usted, [base + "híba"]],
+                [Ustedes, [base + "híban"]],
             ])]
         ])
     }

@@ -21,26 +21,26 @@ export const mover: Irregularities = {
 
         return new Map([
             [IndicativoPresente, new Map([
-                [Yo, base + "ue" + rest + "o"],
-                [Tu, base + "ue" + rest + "es"],
-                [Usted, base + "ue" + rest + "e"],
-                [Ustedes, base + "ue" + rest + "en"],
+                [Yo, [base + "ue" + rest + "o"]],
+                [Tu, [base + "ue" + rest + "es"]],
+                [Usted, [base + "ue" + rest + "e"]],
+                [Ustedes, [base + "ue" + rest + "en"]],
             ])],
             [SubjuntivoPresente, new Map([
-                [Yo, base + "ue" + rest + "a"],
-                [Tu, base + "ue" + rest + "as"],
-                [Usted, base + "ue" + rest + "a"],
-                [Ustedes, base + "ue" + rest + "an"],
+                [Yo, [base + "ue" + rest + "a"]],
+                [Tu, [base + "ue" + rest + "as"]],
+                [Usted, [base + "ue" + rest + "a"]],
+                [Ustedes, [base + "ue" + rest + "an"]],
             ])],
             [ImperativoAfirmativo, new Map([
-                [Tu, base + "ue" + rest + "e"],
-                [Usted, base + "ue" + rest + "a"],
-                [Ustedes, base + "ue" + rest + "an"],
+                [Tu, [base + "ue" + rest + "e"]],
+                [Usted, [base + "ue" + rest + "a"]],
+                [Ustedes, [base + "ue" + rest + "an"]],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, base + "ue" + rest + "as"],
-                [Usted, base + "ue" + rest + "a"],
-                [Ustedes, base + "ue" + rest + "an"]
+                [Tu, [base + "ue" + rest + "as"]],
+                [Usted, [base + "ue" + rest + "a"]],
+                [Ustedes, [base + "ue" + rest + "an"]]
             ])]
         ])
     }

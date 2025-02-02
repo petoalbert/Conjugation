@@ -16,27 +16,27 @@ export const cruzar: Irregularities = {
 
         return new Map([
             [IndicativoIndefinido, new Map([
-                [Yo, base + "cé"],
+                [Yo, [base + "cé"]],
             ])],
             [SubjuntivoPresente, new Map([
-                [Yo, base + "ce"],
-                [Tu, base + "ces"],
-                [Usted, base + "ce"],
-                [Nosotros, base + "cemos"],
-                [Vosotros, base + "céis"],
-                [Ustedes, base + "cen"],
+                [Yo, [base + "ce"]],
+                [Tu, [base + "ces"]],
+                [Usted, [base + "ce"]],
+                [Nosotros, [base + "cemos"]],
+                [Vosotros, [base + "céis"]],
+                [Ustedes, [base + "cen"]],
             ])],
             [ImperativoAfirmativo, new Map([
-                [Usted, base + "ce"],
-                [Nosotros, base + "cemos"],
-                [Ustedes, base + "cen"],
+                [Usted, [base + "ce"]],
+                [Nosotros, [base + "cemos"]],
+                [Ustedes, [base + "cen"]],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, base + "ces"],
-                [Usted, base + "ce"],
-                [Nosotros, base + "cemos"],
-                [Vosotros, base + "céis"],
-                [Ustedes, base + "cen"]
+                [Tu, [base + "ces"]],
+                [Usted, [base + "ce"]],
+                [Nosotros, [base + "cemos"]],
+                [Vosotros, [base + "céis"]],
+                [Ustedes, [base + "cen"]]
             ])]
         ])
     }

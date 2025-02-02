@@ -19,27 +19,27 @@ export const dirigir: Irregularities = {
 
         return new Map([
             [IndicativoPresente, new Map([
-                [Yo, base + "jo"]
+                [Yo, [base + "jo"]]
             ])],
             [SubjuntivoPresente, new Map([
-                [Yo, base + "ja"],
-                [Tu, base + "jas"],
-                [Usted, base + "ja"],
-                [Nosotros, base + "jamos"],
-                [Vosotros, base + "jáis"],
-                [Ustedes, base + "jan"],
+                [Yo, [base + "ja"]],
+                [Tu, [base + "jas"]],
+                [Usted, [base + "ja"]],
+                [Nosotros, [base + "jamos"]],
+                [Vosotros, [base + "jáis"]],
+                [Ustedes, [base + "jan"]],
             ])],
             [ImperativoAfirmativo, new Map([
-                [Tu, base + "ja"],
-                [Usted, base + "jamos"],
-                [Ustedes, base + "jan"],
+                [Tu, [base + "ja"]],
+                [Usted, [base + "jamos"]],
+                [Ustedes, [base + "jan"]],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, base + "jas"],
-                [Usted, base + "ja"],
-                [Nosotros, base + "jamos"],
-                [Vosotros, base + "jáis"],
-                [Ustedes, base + "jan"]
+                [Tu, [base + "jas"]],
+                [Usted, [base + "ja"]],
+                [Nosotros, [base + "jamos"]],
+                [Vosotros, [base + "jáis"]],
+                [Ustedes, [base + "jan"]]
             ])]
         ])
     }

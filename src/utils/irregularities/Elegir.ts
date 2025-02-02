@@ -9,8 +9,7 @@ const {
     ImperativoAfirmativo,
     ImperativoNegativo,
     IndicativoIndefinido,
-    IndicativoFuturoImperfecto,
-    IndicativoCondicional
+    SubjuntivoImperfecto
 } = Tense
 
 export const elegir: Irregularities = {
@@ -19,35 +18,43 @@ export const elegir: Irregularities = {
 
         return new Map([
             [IndicativoPresente, new Map([
-                [Yo, base + "ijo"],
-                [Tu, base + "iges"],
-                [Usted, base + "ige"],
-                [Ustedes, base + "igen"],
+                [Yo, [base + "ijo"]],
+                [Tu, [base + "iges"]],
+                [Usted, [base + "ige"]],
+                [Ustedes, [base + "igen"]],
             ])],
             [IndicativoIndefinido, new Map([
-                [Usted, base + "igió"],
-                [Ustedes, base + "igieron"],
+                [Usted, [base + "igió"]],
+                [Ustedes, [base + "igieron"]],
             ])],
             [SubjuntivoPresente, new Map([
-                [Yo, base + "ija"],
-                [Tu, base + "ijas"],
-                [Usted, base + "ija"],
-                [Nosotros, base + "ijamos"],
-                [Vosotros, base + "ijáis"],
-                [Ustedes, base + "ijan"],
+                [Yo, [base + "ija"]],
+                [Tu, [base + "ijas"]],
+                [Usted, [base + "ija"]],
+                [Nosotros, [base + "ijamos"]],
+                [Vosotros, [base + "ijáis"]],
+                [Ustedes, [base + "ijan"]],
             ])],
             [ImperativoAfirmativo, new Map([
-                [Tu, base + "ige"],
-                [Usted, base + "ija"],
-                [Nosotros, base + "ijamos"],
-                [Ustedes, base + "ijan"],
+                [Tu, [base + "ige"]],
+                [Usted, [base + "ija"]],
+                [Nosotros, [base + "ijamos"]],
+                [Ustedes, [base + "ijan"]],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, base + "ijas"],
-                [Usted, base + "ija"],
-                [Nosotros, base + "ijamos"],
-                [Vosotros, base + "ijáis"],
-                [Ustedes, base + "ijan"]
+                [Tu, [base + "ijas"]],
+                [Usted, [base + "ija"]],
+                [Nosotros, [base + "ijamos"]],
+                [Vosotros, [base + "ijáis"]],
+                [Ustedes, [base + "ijan"]]
+            ])],
+            [SubjuntivoImperfecto, new Map([
+                [Yo, [base + "igiera", base + "igiese"]],
+                [Tu, [base + "igieras", base + "igieses"]],
+                [Usted, [base + "igiera", base + "igiese"]],
+                [Nosotros, [base + "igiéramos", base + "igiésemos"]],
+                [Vosotros, [base + "igierais", base + "igieseis"]],
+                [Ustedes, [base + "igieran", base + "igiesen"]]
             ])]
         ])
     }

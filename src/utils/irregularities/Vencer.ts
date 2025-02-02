@@ -19,27 +19,27 @@ export const vencer: Irregularities = {
 
         return new Map([
             [IndicativoPresente, new Map([
-                [Yo, base + "zo"],
+                [Yo, [base + "zo"]],
             ])],
             [SubjuntivoPresente, new Map([
-                [Yo, base + "za"],
-                [Tu, base + "zas"],
-                [Usted, base + "za"],
-                [Nosotros, base + "zamos"],
-                [Vosotros, base + "záis"],
-                [Ustedes, base + "zan"],
+                [Yo, [base + "za"]],
+                [Tu, [base + "zas"]],
+                [Usted, [base + "za"]],
+                [Nosotros, [base + "zamos"]],
+                [Vosotros, [base + "záis"]],
+                [Ustedes, [base + "zan"]],
             ])],
             [ImperativoAfirmativo, new Map([
-                [Usted, base + "za"],
-                [Nosotros, base + "zamos"],
-                [Ustedes, base + "zan"],
+                [Usted, [base + "za"]],
+                [Nosotros, [base + "zamos"]],
+                [Ustedes, [base + "zan"]],
             ])],
             [ImperativoNegativo, new Map([
-                [Tu, base + "zas"],
-                [Usted, base + "za"],
-                [Nosotros, base + "zamos"],
-                [Vosotros, base + "záis"],
-                [Ustedes, base + "zan"],
+                [Tu, [base + "zas"]],
+                [Usted, [base + "za"]],
+                [Nosotros, [base + "zamos"]],
+                [Vosotros, [base + "záis"]],
+                [Ustedes, [base + "zan"]],
             ])]
         ])
     }
