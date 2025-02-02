@@ -15,6 +15,7 @@ const Input: React.FC<InputProps> = ({ onFinish, params }) => {
   const prop = React.useMemo(() => (text ? "bottom-[-65px]" : "bottom-0"), [text]);
   const action = React.useMemo(() => (text ? "Next" : "Submit"), [text]);
   const width = React.useMemo(() => (text ? "w-[80px]" : "w-[100px]"), [text]);
+  const trimmedText = React.useMemo(() => text?.trim().toLowerCase(), [text]);
 
   const handleSendClick = React.useCallback(
     (event: React.FormEvent) => {
@@ -62,7 +63,7 @@ const Input: React.FC<InputProps> = ({ onFinish, params }) => {
           {action}
         </button>
         <div className="absolute z-0 bottom-[16px] left-[20px]">
-          {text === correctForm ? "Correct answer!" : correctForm}
+          {correctForm.includes(trimmedText ?? '') ? "Correct answer!" : correctForm[0]}
         </div>
       </div>
     </form>
