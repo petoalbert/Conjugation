@@ -6,6 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { TaskResult } from "../components/TaskResult";
 import { pronounToString } from "../utils/Pronoun";
 import { tenseToString } from "../utils/Tense";
+import Input from "../components/Input";
 
 type TaskData = {
   id: string;
@@ -58,29 +59,9 @@ export default function ConjugationGame() {
 
   return (
     <div id="main">
-      <div className="fixed bottom-0 w-full">
-        <div className="mb-20 p-4" id="second">
-          {tasks.map(t => (
-            <div key={t.id} className="rounded border border-blue-500 mb-2 shadow-lg">
-              <Task params={t.params} />
-              {t.userInput != null && <TaskResult params={t.params} input={t.userInput} />}
-            </div>
-          ))}
-          <div className="flex items-center border border-gray-300 rounded-md shadow-sm">
-            <span className="px-3 py-2 bg-gray-100 text-gray-700 border-r border-gray-300 rounded-l-md">
-              {pronounToString(tasks[tasks.length - 1].params.pronoun)}
-            </span>
-            <input
-              type="text"
-              className="flex-1 px-3 py-2 border-none focus:ring-2 focus:ring-blue-500 rounded-r-md"
-              value={inputText}
-              onChange={handleInputChange}
-              onKeyDown={handleKeyDown}
-              placeholder={tenseToString(tasks[tasks.length - 1].params.tense)}
-              aria-label={tenseToString(tasks[tasks.length - 1].params.tense)}
-              aria-describedby="basic-addon1"
-            />
-          </div>
+      <div className="w-full flex h-screen items-center justify-center">
+        <div className="mb-20 p-4 h-auto" id="second">
+          <Task />
         </div>
       </div>
     </div>
