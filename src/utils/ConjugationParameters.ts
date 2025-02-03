@@ -32,6 +32,12 @@ function getIrregularVerb():string {
   return getRandom(getRandom(Array.from(irregularities.values())))
 }
 
+function getTop500IrregularVerb():string {
+  const irregularVerbs = Array.from(irregularities.values());
+  const topIrregularVerbs = top500Verbs.filter(value => irregularVerbs.some(verbs => verbs.includes(value)));
+  return getRandom(topIrregularVerbs);
+}
+
 export type ConjugationParameters = {
   verb: string;
   tense: Tense;
@@ -79,8 +85,13 @@ function getImperativePronoun(): Pronoun {
   return pronouns[randomIndex];
 }
 
-export function getParameters(onlyTop500: boolean): ConjugationParameters {
-  const verb = onlyTop500 ? getRandom(top500Verbs) : getRandom(allVerbs)
+export function getParameters(): ConjugationParameters {
+  const isIrregular = Math.random() < 0.5
+  return isIrregular ? getOnlyIrregularParameters() : getTop500Parameters()
+}
+
+function getTop500Parameters(): ConjugationParameters {
+  const verb = getRandom(top500Verbs)
   const tense = getTense();
 
   let pronoun: Pronoun;
@@ -101,13 +112,8 @@ export function getParameters(onlyTop500: boolean): ConjugationParameters {
   }
 }
 
-export function getOnlyIrregularParameters(onlyTop500: boolean): ConjugationParameters {
-  let verb: string
-  if (onlyTop500) {
-    verb = getRandom(top500IrregularVerbs)
-  } else {
-    verb = getIrregularVerb()
-  }
+export function getOnlyIrregularParameters(): ConjugationParameters {
+  const verb = getTop500IrregularVerb();
   let forms = irregularVerbs.get(verb)?.forms(verb)
   let tense = getRandom(Array.from(forms?.keys() ?? []))
   let pronoun = getRandom(Array.from(forms?.get(tense)?.keys() ?? []))

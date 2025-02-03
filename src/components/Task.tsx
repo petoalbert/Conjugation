@@ -5,10 +5,8 @@ import { tenseToString } from "../utils/Tense";
 import translations from "../utils/translations.json";
 import Input from "./Input";
 
-const onlyTop500 = true;
-
 export default function Task() {
-  const [params, setParams] = useState(getParameters(onlyTop500));
+  const [params, setParams] = useState(getParameters());
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -76,7 +74,7 @@ export default function Task() {
           </h6>
         </div>
       </div>
-      <Input key={params.verb} params={params} onFinish={() => setParams(getParameters(onlyTop500))} />
+      <Input key={params.verb} params={params} onFinish={() => setParams(getParameters())} />
     </div>
   );
 }
