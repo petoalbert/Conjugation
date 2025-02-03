@@ -4,6 +4,7 @@ import { pronounToString } from "../utils/Pronoun";
 import { tenseToString } from "../utils/Tense";
 import translations from "../utils/translations.json";
 import Input from "./Input";
+import { AnimatePresence, motion } from "motion/react";
 
 export default function Task() {
   const [params, setParams] = useState(getParameters());
@@ -41,40 +42,52 @@ export default function Task() {
     }
   }, [isMobile]);
 
+  const newParams = useCallback(() => {
+    setParams(getParameters());
+  }, []);
+
   return (
-    <div className="text-center">
-      <div className="relative bg-white z-[100]">
-        <div className="relative z-[100] font-bold text-xl mb-2">
-          <span
-            className="border-b border-dotted border-black"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            onClick={toggleTooltip}
-          >
-            {params.verb}
-          </span>
-        </div>
-        {isTooltipVisible && (
-          <div
-            data-tooltip="tooltip"
-            className="absolute left-1/2 -translate-x-1/2 bottom-[70px] z-[150] whitespace-normal break-words rounded-lg bg-gray-500 py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
-          >
-            <div className="text-left">
-              <ul>
-                {translation.map((t, i) => (
-                  <li key={i}>{t}</li>
-                ))}
-              </ul>
-            </div>
+    <AnimatePresence>
+      <div className="relative text-center">
+        <motion.div
+          className="relative"
+          initial={{ y: -30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: 30, opacity: 0 }}
+          key={`task-${params.verb}-${params.tense}-${params.pronoun}`}
+        >
+          <div className="font-bold text-xl mb-2">
+            <span
+              className="border-b border-dotted border-black"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              onClick={toggleTooltip}
+            >
+              {params.verb}
+            </span>
           </div>
-        )}
-        <div className="relative z-[100] text-gray-700 mb-2">
-          <h6 className="z-[100] text-lg font-semibold">
-            {pronounToString(params.pronoun)} - {tenseToString(params.tense)}
-          </h6>
-        </div>
+          {isTooltipVisible && (
+            <div
+              data-tooltip="tooltip"
+              className="absolute left-1/2 -translate-x-1/2 bottom-[70px] whitespace-normal break-words rounded-lg bg-gray-500 py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
+            >
+              <div className="text-left">
+                <ul>
+                  {translation.map((t, i) => (
+                    <li key={i}>{t}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          )}
+          <div className="text-gray-700 mb-2">
+            <h6 className="text-lg font-semibold">
+              {pronounToString(params.pronoun)} - {tenseToString(params.tense)}
+            </h6>
+          </div>
+        </motion.div>
+        <Input params={params} onFinish={newParams} />
       </div>
-      <Input key={params.verb} params={params} onFinish={() => setParams(getParameters())} />
-    </div>
+    </AnimatePresence>
   );
 }
